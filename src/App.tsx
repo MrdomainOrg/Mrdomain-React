@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const CACHE_KEY = 'mrdomainLanguage'
+
 function App() {
+  const [selectedLanguage, setSelectedLanguage] = useState<any>(undefined)
+  const [translatedLanguage, setTranslatedLanguage] = useState<any>(undefined)
+  const [translations, setTranslations] = useState<Array<any>>([])
   return (
     <div className="App">
       <header className="App-header">
