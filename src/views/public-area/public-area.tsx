@@ -1,3 +1,4 @@
+import './fonts.css'
 import './bootstrap.css'
 import './fontawesome.css'
 import './themify-icons.css'
