@@ -9,23 +9,23 @@ import './owlcarousel.css'
 import './main-rtl.css'
 import './custom.css'
 
-
+const publicAreaPath = process.env.PUBLIC_URL
 const publicArea = () => {
     return (
         <>
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/jquery-3.5.1.min.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/popper.min.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/rtl.bootstrap.min.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/bootstrap-slider.min.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/jquery.countdown.min.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/jquery.easing.min.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/owl.carousel.min.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/validator.min.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/jquery.waypoints.min.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/jquery.rcounterup.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/magnific-popup.min.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/vendors/hs.megamenu.js" />
-            <script src="%PUBLIC_URL%/Hostlar/assets/js/app.js" />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/jquery-3.5.1.min.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/popper.min.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/rtl.bootstrap.min.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/bootstrap-slider.min.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/jquery.countdown.min.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/jquery.easing.min.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/owl.carousel.min.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/validator.min.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/jquery.waypoints.min.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/jquery.rcounterup.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/magnific-popup.min.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/hs.megamenu.js`} />
+            <script src={`${publicAreaPath}/Hostlar/assets/js/app.js`} />
         </>
     );
 }
