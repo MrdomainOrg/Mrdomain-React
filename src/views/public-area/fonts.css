@@ -1,8 +1,8 @@
 /* IRANYekan Font */
 @font-face {
     font-family: 'IRANYekan';
-    src: url('/Hostlar/assets/fonts/iranyekan/IRANYekanXVF.woff') format('woff-variations'),
-    url('/Hostlar/assets/fonts/iranyekan/IRANYekanXVF.woff') format('woff');
+    src: url('../../../public/Hostlar/assets/fonts/iranyekan/IRANYekanXVF.woff') format('woff-variations'),
+    url('../../../public/Hostlar/assets/fonts/iranyekan/IRANYekanXVF.woff') format('woff');
     font-weight: 100 1000;
     font-display: fallback; 
 
@@ -11,8 +11,8 @@
 /* IRANSans Font */
 @font-face {
     font-family: 'iransans';
-    src: url('/Hostlar/assets/fonts/iransans/IRANSansXV.woff') format('woff-variations'),
-    url('/Hostlar/assets/fonts/iransans/IRANSansXV.woff') format('woff');
+    src: url('../../../public/Hostlar/assets/fonts/iransans/IRANSansXV.woff') format('woff-variations'),
+    url('../../../public/Hostlar/assets/fonts/iransans/IRANSansXV.woff') format('woff');
     font-weight: 100 900;
     font-display: fallback;
 
@@ -21,8 +21,8 @@
 /* Dana Font */
 @font-face { 
     font-family: 'dana';
-    src: url('/Hostlar/assets/fonts/dana/DanaVF.woff') format('woff-variations'),
-    url('/Hostlar/assets/fonts/dana/DanaVF.woff') format('woff');
+    src: url('../../../public/Hostlar/assets/fonts/dana/DanaVF.woff') format('woff-variations'),
+    url('../../../public/Hostlar/assets/fonts/dana/DanaVF.woff') format('woff');
     font-weight: 100 900;
     font-display: fallback;
 }

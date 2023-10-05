@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'themify';
-    src: url("/Hostlar/assets/fonts/themify.eot");
-    src: url("/Hostlar/assets/fonts/themify.eot?#iefix") format("embedded-opentype"), url("/Hostlar/assets/fonts/themify.woff") format("woff"), url("/Hostlar/assets/fonts/themify.ttf") format("truetype"), url("/Hostlar/assets/fonts/themify.svg") format("svg");
+    src: url("../../../public/Hostlar/assets/fonts/themify.eot");
+    src: url("../../../public/Hostlar/assets/fonts/themify.eot?#iefix") format("embedded-opentype"), url("../../../public/Hostlar/assets/fonts/themify.woff") format("woff"), url("../../../public/Hostlar/assets/fonts/themify.ttf") format("truetype"), url("../../../public/Hostlar/assets/img/themify.svg") format("svg");
     font-weight: normal;
     font-style: normal;
   }

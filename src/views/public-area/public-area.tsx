@@ -9,11 +9,13 @@ import './jq-megamenu.css'
 import './owlcarousel.css'
 import './main-rtl.css'
 import './custom.css'
+import { PublicPageLoader } from '../../components/PublicPageLoader/PublicPageLoader'
 
 const publicAreaPath = process.env.PUBLIC_URL
-const publicArea = () => {
+const PublicArea = () => {
     return (
         <>
+            <PublicPageLoader />
             <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/jquery-3.5.1.min.js`} />
             <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/popper.min.js`} />
             <script src={`${publicAreaPath}/Hostlar/assets/js/vendors/rtl.bootstrap.min.js`} />
@@ -31,4 +33,4 @@ const publicArea = () => {
     );
 }
 
-export default publicArea;
+export default PublicArea;
