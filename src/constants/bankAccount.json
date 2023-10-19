@@ -1,0 +1,29 @@
+[
+    {
+        "BankId": "BANKMELI",
+        "BankName": "بانک ملی",
+        "BankAccount": "0230775837007",
+        "AccountSheba": "IR530170000000230775837007",
+        "CardNumber": "6037 9974 6458 6628",
+        "AccountOwner": "آرش ابراهیم پور",
+        "ImageUrl": "/assets/img/bank/bankMelli.svg"
+    },
+    {
+        "BankId": "BANKSADERAT",
+        "BankName": "بانک صادرات",
+        "BankAccount": "0218324172006",
+        "AccountSheba": "IR480190000000218324172006",
+        "CardNumber": "6037 6976 8976 5177",
+        "AccountOwner": "آرش ابراهیم پور",
+        "ImageUrl": "/assets/img/bank/bankSaderat.svg"
+    },
+    {
+        "BankId": "BANKMELAT",
+        "BankName": "بانک ملت",
+        "BankAccount": "1740199609",
+        "AccountSheba": "IR030120020000001740199609",
+        "CardNumber": "6104 3386 6194 4336",
+        "AccountOwner": "آرش ابراهیم پور",
+        "ImageUrl": "/assets/img/bank/bankMellat.svg"
+    }
+]

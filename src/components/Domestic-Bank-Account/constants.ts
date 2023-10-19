@@ -1,0 +1,36 @@
+export enum BankId {
+    MELIBANK = 'بانک ملی',
+    FUTRUEBANK = 'بانک آینده',
+    SAMANBANK = 'بانک سامان',
+    SADERATBANK = 'بانک صادرات',
+    MELATBANK = 'بانک ملت',
+    SEPAHBANK = 'بانک سپه',
+    PARSIANBANK = 'بانک پارسیان',
+    EGHTESADNOVINBANK = 'بانک اقتصاد نوین',
+    AGRIBANK = 'بانک کشاورزی',
+    MASKANBANK = 'بانک مسکن',
+    PASARGADBANK = 'بانک پاسارگاد',
+    SANATVAMADANBANK = 'بانک صنعت و معدن',
+    TOSESADERATBANK = 'بانک توسعه صادرات',
+    SARMAYEBANK = 'بانک سرمایه',
+    REFAHKARGARANBANK = 'بانک رفاه کارگران',
+    POSTBANK = 'پست بانک',
+    TOSETAVONBANK = 'بانک توسعه تعاون',
+    SINABANK = 'بانک سینا',
+    CITYBANK = 'بانک شهر',
+    DAYBANK = 'بانک دی',
+    TEJARATBANK = 'بانک تجارت',
+    MIDDLEEASTBANK = 'بانک خاور میانه',
+    GARDESHGARIBANK = 'بانک گردشگری',
+    IRANZAMINBANK = 'بانک ایران زمین',
+    RESALARBANK = 'بانک رسالت',
+    MEHRIRANBANK = 'بانک مهر ایران',
+    KARAFARINBANK = 'بانک کارآفرین',
+    MOASESEETEBARINOUR = 'موسسه اعتباری نور',
+    MOASESEETEBARIMELAL = 'موسسه اعتباری ملل',
+    BLUBANK = 'بانک بلو',
+
+
+
+
+}
