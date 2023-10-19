@@ -12,19 +12,27 @@ import './main-rtl.css'
 import './custom.css'
 import { PublicPageLoader } from '../../components/PublicPageLoader/PublicPageLoader'
 import { PublicNavMenu } from "../../components/Public-nav-menu/PublicNavMenu"
-import { PublicHome as Home} from "../../pages/Public-Area/PublicHome"
+import { PublicHome as Home } from "../../pages/Public-Area/PublicHome"
+import { CompanyBankAccounts } from "../../pages/Public-Area/CompanyBankAccounts"
+import { CompanyCryptoWallet } from "../../pages/Public-Area/CompanyCryptoWallet"
+import { PublicHeader } from "../../components/Public-header/PublicHeader"
+import { ContactUs } from "../../pages/Public-Area/ContactUs"
+import { PublicFooter } from '../../components/Public-footer/PublicFooter';
 
 const publicAreaPath = process.env.PUBLIC_URL
 const PublicArea = () => {
     return (
         <>
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />
-            </Routes>
-            <PublicNavMenu />
-     
-        </Router>
+            <Router>
+                <PublicHeader />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/companyBankAccounts" element={<CompanyBankAccounts />} />
+                    <Route path="/companyCryptoWallet" element={<CompanyCryptoWallet />} />
+                    <Route path="/contactUs" element={<ContactUs />} />
+                </Routes>
+                <PublicFooter />
+            </Router>
         </>
     );
 }

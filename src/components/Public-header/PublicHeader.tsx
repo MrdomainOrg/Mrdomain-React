@@ -11,7 +11,7 @@ export const PublicHeader = () => {
                             <div className="topbar-text d-none d-md-block d-lg-block">
                                 <ul className="list-inline">
                                     <li className="list-inline-item">
-                                        <a href="tell:888-1234567"><span className="fas fa-phone mr-2"></span> {t('support24h')}</a>
+                                        <a href="tell:888-1234567"><span className="fas fa-phone mr-2"></span> ساپورت ۲۴ ساعته</a>
                                     </li>
                                     <li className="list-inline-item"><a href="#"><span className="fas fa-comments mr-2"></span> گفتگوی زنده </a></li>
                                 </ul>

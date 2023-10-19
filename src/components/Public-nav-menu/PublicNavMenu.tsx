@@ -10,7 +10,7 @@ export const PublicNavMenu = () => {
         <div id="logoAndNav" className="main-header-menu-wrap white-bg border-bottom">
             <div className="container">
                 <nav className="js-mega-menu navbar navbar-expand-md header-nav">
-                    <a className="navbar-brand" href="index.html"><img src="assets/img/logo-color.png" width="120" alt="logo" className="img-fluid" /></a>
+                    <a className="navbar-brand" href="index.html"><img src="assets/img/head-logo-mrdomain.png" width="120" alt="logo" className="img-fluid" /></a>
                     <button type="button" className="navbar-toggler btn" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
                         <span id="hamburgerTrigger">
                             <span className="fas fa-bars"></span>
@@ -35,14 +35,14 @@ export const PublicNavMenu = () => {
                                 data-max-width="720px" data-position="right"><a
                                     id="hostingMegaMenu"
                                     className="nav-link custom-nav-link main-link-toggle"
-                                    href="JavaScript:Void(0);" aria-haspopup="true"
+                                    href="#" aria-haspopup="true"
                                     aria-expanded="false">اطلاعات مالی</a>
                                 <div className="hs-mega-menu w-100 main-sub-menu"
                                     aria-labelledby="hostingMegaMenu">
                                     <div className="row no-gutters">
                                         <div className="col-md-6">
                                             <div className="title-with-icon-item">
-                                                <router-link className="title-with-icon-link" to="/companyBankAccounts" >
+                                                <Link className="title-with-icon-link" to="/companyBankAccounts" >
                                                     <div className="media">
                                                         <div className="menu-item-icon">
                                                             <i className="fas fa-credit-card"></i>
@@ -52,13 +52,13 @@ export const PublicNavMenu = () => {
                                                             <small className="u-header__promo-text">واریز ریالی </small>
                                                         </div>
                                                     </div>
-                                                </router-link>
+                                                </Link>
                                             </div>
                                         </div>
 
                                         <div className="col-md-6">
                                             <div className="title-with-icon-item">
-                                                <router-link className="title-with-icon-link" to="/companyCryptoWallet" >
+                                                <Link className="title-with-icon-link" to="/companyCryptoWallet" >
                                                     <div className="media">
                                                         <div className="menu-item-icon">
                                                             <i className="fas fa-envelope"></i>
@@ -68,13 +68,13 @@ export const PublicNavMenu = () => {
                                                             <small className="u-header__promo-text">واریز دلاری</small>
                                                         </div>
                                                     </div>
-                                                </router-link>
+                                                </Link>
                                             </div>
                                         </div>
 
                                         <div className="col-md-6">
                                             <div className="title-with-icon-item">
-                                                <a className="title-with-icon-link" href="https://zarinp.al/mrdomain" >
+                                                <a className="title-with-icon-link" href="https://zarinp.al/eae966" >
                                                     <div className="media">
                                                         <div className="menu-item-icon">
                                                             <i className="fas fa-credit-card"></i>
