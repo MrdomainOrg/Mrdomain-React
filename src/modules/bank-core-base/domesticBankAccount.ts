@@ -7,11 +7,11 @@ export class DomesticBankAccount extends BaseDomesticBankAccount {
         persianName: string,
         accountOwner: string,
         accountNumber: string,
-        iban: string,
+        sheba: string,
         cardNumber: string,
         isActive: boolean,
         imageUrl?: string
     ) {
-        super(bankId,englishName,persianName,accountOwner,accountNumber,iban,cardNumber,isActive,imageUrl)
+        super(bankId,englishName,persianName,accountOwner,accountNumber,sheba,cardNumber,isActive,imageUrl)
     }
 }

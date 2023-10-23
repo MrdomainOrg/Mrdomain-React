@@ -1,4 +1,37 @@
 export enum BankId {
+    MELIBANK = 1,
+    FUTRUEBANK = 2,
+    SAMANBANK = 3,
+    SADERATBANK = 4,
+    MELATBANK = 5,
+    SEPAHBANK = 6,
+    PARSIANBANK = 7,
+    EGHTESADNOVINBANK = 8,
+    AGRIBANK = 9,
+    MASKANBANK = 10,
+    PASARGADBANK = 11,
+    SANATVAMADANBANK = 12,
+    TOSESADERATBANK = 13,
+    SARMAYEBANK = 14,
+    REFAHKARGARANBANK = 15,
+    POSTBANK = 16,
+    TOSETAVONBANK = 17,
+    SINABANK = 18,
+    CITYBANK = 19,
+    DAYBANK = 20,
+    TEJARATBANK = 21,
+    MIDDLEEASTBANK = 22,
+    GARDESHGARIBANK = 23,
+    IRANZAMINBANK = 24,
+    RESALARBANK = 25,
+    MEHRIRANBANK = 26,
+    KARAFARINBANK = 27,
+    MOASESEETEBARINOUR = 28,
+    MOASESEETEBARIMELAL = 29,
+    BLUBANK = 30,
+}
+
+export enum BankIdPersian {
     MELIBANK = 'بانک ملی',
     FUTRUEBANK = 'بانک آینده',
     SAMANBANK = 'بانک سامان',
@@ -29,8 +62,4 @@ export enum BankId {
     MOASESEETEBARINOUR = 'موسسه اعتباری نور',
     MOASESEETEBARIMELAL = 'موسسه اعتباری ملل',
     BLUBANK = 'بانک بلو',
-
-
-
-
 }

@@ -9,7 +9,7 @@ export abstract class BaseDomesticBankAccount {
 
     public readonly accountNumber: string
 
-    public readonly iban: string
+    public readonly sheba: string
 
     public readonly cardNumber: string
 
@@ -23,7 +23,7 @@ export abstract class BaseDomesticBankAccount {
         persianName: string,
         accountOwner: string,
         accountNumber: string,
-        iban: string,
+        sheba: string,
         cardNumber: string,
         isActive: boolean,
         imageUrl?: string
@@ -33,7 +33,7 @@ export abstract class BaseDomesticBankAccount {
         this.persianName = persianName
         this.accountOwner = accountOwner
         this.accountNumber = accountNumber
-        this.iban = iban
+        this.sheba = sheba
         this.cardNumber = cardNumber
         this.imageUrl = imageUrl
         this.isActive = isActive
