@@ -1,5 +1,5 @@
 export abstract class BaseDomesticBankAccount {
-    public readonly bankId: string
+    public readonly bankId: number
 
     public readonly englishName: string
 
@@ -13,12 +13,12 @@ export abstract class BaseDomesticBankAccount {
 
     public readonly cardNumber: string
 
-    public readonly imageUrl?: string
+    public readonly _imageUrl?: string
 
     public readonly isActive: boolean
 
     protected constructor(
-        bankId: string,
+        bankId: number,
         englishName: string,
         persianName: string,
         accountOwner: string,
@@ -35,8 +35,10 @@ export abstract class BaseDomesticBankAccount {
         this.accountNumber = accountNumber
         this.sheba = sheba
         this.cardNumber = cardNumber
-        this.imageUrl = imageUrl
+        this._imageUrl = imageUrl
         this.isActive = isActive
     }
+
+    public abstract get imageUrl(): string
 
 }
