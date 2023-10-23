@@ -1,4 +1,4 @@
-import { BankId } from "../../components/Domestic-Bank-Account/constants";
+import { BankId } from "./constants";
 import { DomesticBankAccount } from './domesticBankAccount';
 const owner = 'آرش ابراهیم پور'
 export const ArashAccountsList = {
