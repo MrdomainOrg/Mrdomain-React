@@ -6,7 +6,6 @@ export const CompanyBankAccountList = () => {
   const onBankChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 
   };
-
   return (
     <div id="faq" className="ptb-100">
       <div className="container">
@@ -24,7 +23,7 @@ export const CompanyBankAccountList = () => {
           <div className="col-md-12 col-lg-12">
             <div id="accordion-one" className="accordion accordion-faq">
               {ArashDomesticBankAccounts.map((aBankAcc, idx: number) => (
-                (aBankAcc.isActive && <ShowDomesticBankAccount companyBankAccount={aBankAcc} rowIdx={idx}/>)
+                (aBankAcc.isActive && <ShowDomesticBankAccount companyBankAccount={aBankAcc} rowIdx={idx} />)
               ))}
             </div>
           </div>
@@ -32,5 +31,4 @@ export const CompanyBankAccountList = () => {
       </div>
     </div>
   )
-
 }
