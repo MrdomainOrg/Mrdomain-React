@@ -18,6 +18,8 @@ import { CompanyCryptoWallet } from "../../pages/Public-Area/CompanyCryptoWallet
 import { PublicHeader } from "../../components/Public-header/PublicHeader"
 import { ContactUs } from "../../pages/Public-Area/ContactUs"
 import { PublicFooter } from '../../components/Public-footer/PublicFooter';
+import { ShortDomainInfoPage } from "./ShortDomainInfoPage"
+import { FullDomainInfoPage } from "./FullDomainInfoPage"
 
 const publicAreaPath = process.env.PUBLIC_URL
 const PublicArea = () => {
@@ -30,8 +32,8 @@ const PublicArea = () => {
                     <Route path="/companyBankAccounts" element={<CompanyBankAccounts />} />
                     <Route path="/companyCryptoWallet" element={<CompanyCryptoWallet />} />
                     <Route path="/contactUs" element={<ContactUs />} />
-                    <Route path="/showdomaindetail/-/mrdomainRoute/shortDomainInfo/:domain" element={<ShortDomainInfo />} />
-                    <Route path="/showdomaindetail/-/mrdomainRoute/domainInfo/:tldPart/:domainPart" element={<FullDomainInfo />} />
+                    <Route path="/showdomaindetail/-/mrdomainRoute/shortDomainInfo/:domain" element={<ShortDomainInfoPage />} />
+                    <Route path="/showdomaindetail/-/mrdomainRoute/domainInfo/:tldPart/:domainPart" element={<FullDomainInfoPage />} />
                 </Routes>
                 <PublicFooter />
             </Router>
