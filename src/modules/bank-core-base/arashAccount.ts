@@ -27,5 +27,6 @@ export const ArashDomesticBankAccounts = [
     new DomesticBankAccount(BankId.RESALARBANK, 'Resalat Bank', 'بانک رسالت', owner, '10-10752483-1', 'IR83-0700-0100-0111-0752-4830-01', '5041-7211-1330-4605', true),
     new DomesticBankAccount(BankId.MOASESEETEBARIMELAL, 'Moasese melal', 'موسسه اعتباری ملل', owner, '046310276000135990', 'IR06-0750-0463-1027-6000-1359-90', '6062-5610-0424-4458', true),
     new DomesticBankAccount(BankId.POSTBANK, 'Post bank', 'پست بانک', owner, '2000228901839', 'IR41-0210-0000-0200-0228-9018-39', '6277-6013-6758-0998', true),
+    new DomesticBankAccount(BankId.MEHRIRANBANK, 'Mehr Iran bank', 'بانک قرض الحسنه مهر ایران', owner, '3025-700-15589511-1', 'IR83-0600-3025-7001-5589-5110-01', '6063-7311-7646-5814', true),
 
 ]

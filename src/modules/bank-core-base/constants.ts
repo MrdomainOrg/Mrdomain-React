@@ -57,7 +57,7 @@ export enum BankIdPersian {
     GARDESHGARIBANK = 'بانک گردشگری',
     IRANZAMINBANK = 'بانک ایران زمین',
     RESALARBANK = 'بانک رسالت',
-    MEHRIRANBANK = 'بانک مهر ایران',
+    MEHRIRANBANK = 'بانک قرض الحسنه مهر ایران',
     KARAFARINBANK = 'بانک کارآفرین',
     MOASESEETEBARINOUR = 'موسسه اعتباری نور',
     MOASESEETEBARIMELAL = 'موسسه اعتباری ملل',
