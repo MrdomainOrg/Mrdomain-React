@@ -30,6 +30,8 @@ const PublicArea = () => {
                     <Route path="/companyBankAccounts" element={<CompanyBankAccounts />} />
                     <Route path="/companyCryptoWallet" element={<CompanyCryptoWallet />} />
                     <Route path="/contactUs" element={<ContactUs />} />
+                    <Route path="/showdomaindetail/-/mrdomainRoute/shortDomainInfo/:domain" element={<ShortDomainInfo />} />
+                    <Route path="/showdomaindetail/-/mrdomainRoute/domainInfo/:tldPart/:domainPart" element={<FullDomainInfo />} />
                 </Routes>
                 <PublicFooter />
             </Router>
