@@ -1,3 +1,5 @@
+import { CompanyBankAccountList } from "../../components/Domestic-Bank-Account/CompanyBankAccountList"
+
 export interface BankAccount {
     bankName: string,
     sheba: string,
@@ -10,6 +12,7 @@ export interface BankAccount {
 export const CompanyBankAccounts = () => {
     return(
         <>
+        <CompanyBankAccountList />
         </>
     )
 }
