@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-export const PublicFooter = () => {
+import { siteConfig } from '../../constants/SiteConfigs';
+export const PublicFooter = (): JSX.Element => {
     return (
         <footer className="footer-section">
             <div className="footer-top gradient-bg">
@@ -10,8 +11,8 @@ export const PublicFooter = () => {
                                 <div className="col-md-3 col-sm-6">
                                     <div className="footer-nav-wrap text-white">
                                         <h4 className="text-white">مجوزها</h4>
-                                        <p><a referrerPolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=90500&amp;Code=Wb0sjCeDW7zzNYHUPr3Y">
-                                            <img referrerPolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=90500&amp;Code=Wb0sjCeDW7zzNYHUPr3Y" alt="" style={{"cursor":"pointer"}} id="Wb0sjCeDW7zzNYHUPr3Y" /></a></p>
+                                        <p><a referrerPolicy="origin" rel="noreferrer" target="_blank" href="https://trustseal.enamad.ir/?id=90500&amp;Code=Wb0sjCeDW7zzNYHUPr3Y">
+                                            <img referrerPolicy='origin' src='https://Trustseal.eNamad.ir/logo.aspx?id=90500&amp;Code=Wb0sjCeDW7zzNYHUPr3Y' alt='' style={ { cursor: 'pointer' } } id='Wb0sjCeDW7zzNYHUPr3Y' /></a></p>
                                     </div>
                                 </div>
                                 <div className="col-md-3 col-sm-6">
@@ -76,8 +77,7 @@ export const PublicFooter = () => {
                         <div className="col-md-5 col-lg-5">
                             <p className="copyright-text pb-0 mb-0">
                                 کپی رایت © 1400. همه حقوق محفوظ است <a
-                                    href="https://www.rtl-theme.com/author/chaveamin/"
-                                    target="_blank">آقای دامنه</a>
+                                    href={ siteConfig.siteDomain }>آقای دامنه</a>
                             </p>
                         </div>
                         <div className="col-md-7 col-lg-6">
@@ -102,5 +102,5 @@ export const PublicFooter = () => {
                 </div>
             </div>
         </footer>
-    )
-}
+    );
+};
