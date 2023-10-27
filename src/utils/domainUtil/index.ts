@@ -1,1 +1,1 @@
-export { type DomainType, parseDomain } from './BaseDomainUtil'
+export { type DomainType, parseDomain } from './BaseDomainUtil';

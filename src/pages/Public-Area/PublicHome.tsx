@@ -1,6 +1,6 @@
-export const PublicHome = () => {
+export const PublicHome = (): JSX.Element => {
     return (
         <>
         </>
-    )
-}
+    );
+};

@@ -1,6 +1,6 @@
-export const CompanyCryptoWallet = () => {
-    return(
+export const CompanyCryptoWallet = (): JSX.Element => {
+    return (
         <>
         </>
-    )
-}
+    );
+};
