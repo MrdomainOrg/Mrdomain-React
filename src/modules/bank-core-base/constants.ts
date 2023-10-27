@@ -61,7 +61,7 @@ export enum BankIdPersian {
     KARAFARINBANK = 'بانک کارآفرین',
     MOASESEETEBARINOUR = 'موسسه اعتباری نور',
     MOASESEETEBARIMELAL = 'موسسه اعتباری ملل',
-    BLUBANK = 'بانک بلو',
-}
+    BLUBANK = 'بانک بلو'
+};
 
-export const baseImageBankUrl = '/assets/img/bank'
+export const baseImageBankUrl = '/assets/img/bank';
