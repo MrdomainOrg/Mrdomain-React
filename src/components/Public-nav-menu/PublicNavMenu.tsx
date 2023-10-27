@@ -10,7 +10,7 @@ export const PublicNavMenu = () => {
         <div id="logoAndNav" className="main-header-menu-wrap white-bg border-bottom">
             <div className="container">
                 <nav className="js-mega-menu navbar navbar-expand-md header-nav">
-                    <a className="navbar-brand" href="index.html"><img src="assets/img/head-logo-mrdomain.png" width="120" alt="logo" className="img-fluid" /></a>
+                    <a className="navbar-brand" href="index.html"><img src="/assets/img/head-logo-mrdomain.png" width="120" alt="logo" className="img-fluid" /></a>
                     <button type="button" className="navbar-toggler btn" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
                         <span id="hamburgerTrigger">
                             <span className="fas fa-bars"></span>
