@@ -1,17 +1,12 @@
-import { Link, useParams } from "react-router-dom";
-import { DomainType, parseDomain } from '../../utils/domainUtil';
-import { siteConfig, priceConfig, userDetails } from "../../constants/SiteConfigs";
-import { convertToPersianNumber, formatNumberWithCommas, formatPersianStringNumberWithCommas, formatStringNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
-export const ShortDomainInfoPage = () => {
-    const { domain } = useParams()
+import { Link, useParams } from 'react-router-dom';
+import { parseDomain } from '../../utils/domainUtil';
+import { priceConfig } from '../../constants/SiteConfigs';
+import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
+export const ShortDomainInfoPage = (): JSX.Element => {
+    const { domain } = useParams();
     var domainLink = '';
-    if (domain) {
-        const parsedDomain = parseDomain(domain);
-        domainLink = `/showdomaindetail/-/mrdomainRoute/domainInfo/${parsedDomain.tldPrt}/${parsedDomain.domainPart}`;
-
-        console.log('parsedDomain is : ',parsedDomain);
-        console.log('domainLink is : ',domainLink);
-    }
+    const parsedDomain = parseDomain(domain ?? '');
+    domainLink = `/showdomaindetail/-/mrdomainRoute/domainInfo/${parsedDomain.tldPrt}/${parsedDomain.domainPart}`;
     const minDomainPriceInUsdInPersian = formatNumberWithCommas(priceConfig.minimumDomainPriceInUsd);
     return (
         <div className="main">
@@ -60,5 +55,5 @@ export const ShortDomainInfoPage = () => {
                 </div >
             </section >
         </div >
-    )
-}
+    );
+};

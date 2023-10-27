@@ -13,17 +13,24 @@ export const convertToPersianNumber = (number: number): string => {
     }
 
     return persianNumber;
-}
+};
 
 export const formatNumberWithCommas = (number: number): string => {
-    return convertToPersianNumber(number).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
-}
+    // const persianNumber = convertToPersianNumber(number); // تبدیل به اعداد فارسی
+    // const persianNumberWithCommas = addCommasToPersianNumber(persianNumber); // اضافه کردن کاماها به اعداد فارسی
+    return Intl.NumberFormat().format(number);
+};
+
+// // تابعی برای اضافه کردن کاماها به عدد فارسی
+// const addCommasToPersianNumber = (numberString: string): string => {
+//     return numberString.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+// };
 
 export const formatStringNumberWithCommas = (input: string): string => {
     const numberStr = input.replace(/,/g, '');
     return formatNumberWithCommas(parseInt(numberStr, 10));
-}
+};
 
 export const formatPersianStringNumberWithCommas = (input: string): string => {
     return formatStringNumberWithCommas(input);
-}
+};
