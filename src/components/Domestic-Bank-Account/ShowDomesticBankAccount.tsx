@@ -23,10 +23,10 @@ export const ShowDomesticBankAccount: React.FC<ShowDomesticBankAccountProps> = (
                         </div>
                         <div className="col-xl-8 col-lg-9 col-12 order-xl-first">
                             <h3>مشخصات حساب مریوط به {props.companyBankAccount.persianName}</h3>
-                            <p><h5>شماره حساب : <span dir="ltr">{props.companyBankAccount.accountNumber}</span></h5></p>
-                            <p><h5>شماره کارت : <span dir="ltr">{props.companyBankAccount.cardNumber}</span></h5></p>
-                            <p><h5>شماره شبا : {props.companyBankAccount.sheba}</h5></p>
-                            <p><h5>نام صاحب حساب : {props.companyBankAccount.accountOwner}</h5></p>
+                            <h5>شماره حساب : <span dir="ltr">{props.companyBankAccount.accountNumber}</span></h5>
+                            <h5>شماره کارت : <span dir="ltr">{props.companyBankAccount.cardNumber}</span></h5>
+                            <h5>شماره شبا : {props.companyBankAccount.sheba}</h5>
+                            <h5>نام صاحب حساب : {props.companyBankAccount.accountOwner}</h5>
                         </div>
                     </div>
                 </div>
