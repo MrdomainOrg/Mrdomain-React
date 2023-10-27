@@ -1,9 +1,12 @@
-import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router-dom";
-export const PublicNavMenu = () => {
-    const { t, i18n } = useTranslation()
-    let navigate = useNavigate()
-    function onClick(event: React.MouseEvent<HTMLAnchorElement>) {
+//  import { useTranslation } from "react-i18next";
+
+import { Link } from 'react-router-dom';
+
+// import { Link, useNavigate } from 'react-router-dom';
+export const PublicNavMenu = (): JSX.Element => {
+   // const { t, i18n } = useTranslation()
+   // let navigate = useNavigate()
+    function onClick (event: React.MouseEvent<HTMLAnchorElement>): void {
         event.preventDefault();
     }
     return (
@@ -22,8 +25,8 @@ export const PublicNavMenu = () => {
                                 <Link to="/" className="nav-link custom-nav-link">خانه</Link>
                             </li>
                             <li className="nav-item hs-has-sub-menu custom-nav-item">
-                                <a id="pagesMegaMenu" className="nav-link custom-nav-link main-link-toggle" href="#" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu" onClick={onClick}>پرتال مشتریان</a>
-                                <ul id="pagesSubMenu" className="hs-sub-menu main-sub-menu" aria-labelledby="pagesMegaMenu" style={{ "minWidth": "260px" }}>
+                                <a id='pagesMegaMenu' className='nav-link custom-nav-link main-link-toggle' href='#' aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu" onClick={onClick}>پرتال مشتریان</a>
+                                <ul id='pagesSubMenu' className='hs-sub-menu main-sub-menu' aria-labelledby='pagesMegaMenu' style={{ minWidth: '260px' }}>
                                     <li className="nav-item submenu-item"><a
                                         className="nav-link sub-menu-nav-link" href="https://crm.mrdomain.ir/register.php">پرتال ریالی</a></li>
                                     <li className="nav-item submenu-item"><a
@@ -88,7 +91,7 @@ export const PublicNavMenu = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div> 
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -96,4 +99,4 @@ export const PublicNavMenu = () => {
             </div>
         </div>
     );
-}
+};
