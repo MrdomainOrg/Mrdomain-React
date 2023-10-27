@@ -1,7 +1,7 @@
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { PublicNavMenu } from '../Public-nav-menu/PublicNavMenu';
-export const PublicHeader = () => {
-    const { t, i18n } = useTranslation();
+export const PublicHeader = (): JSX.Element => {
+    // const { t, i18n } = useTranslation();
     return (
         <header id="header" className="header-main">
             <div id="header-top-bar" className="gray-light-bg">
@@ -30,5 +30,5 @@ export const PublicHeader = () => {
             </div>
             <PublicNavMenu />
         </header>
-    )
-}
+    );
+};
