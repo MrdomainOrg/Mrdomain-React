@@ -21,13 +21,26 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    "linebreak-style": ["error","unix"],
-    "quotes": ["error","single"],
+    "linebreak-style": ["error", "unix"],
+    quotes: ["error", "single"],
     "@typescript-eslint/semi": ["error", "always"],
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
-    "indent": "off",
+    indent: "off",
     "@typescript-eslint/indent": [1, "tab"],
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        multiline: {
+          delimiter: "semi",
+          requireLast: true,
+        },
+        singleline: {
+          delimiter: "semi",
+          requireLast: false,
+        },
+      },
+    ],
     //indent: ['error', 2, { "MemberExpression": 1 }],
     //indent: [1, "tab"],
     //"no-tabs": 0,

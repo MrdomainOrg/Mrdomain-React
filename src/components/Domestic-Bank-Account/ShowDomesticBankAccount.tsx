@@ -2,8 +2,8 @@ import { type DomesticBankAccount } from '../../modules/bank-core-base';
 import { PropTypes } from 'prop-types';
 
 interface ShowDomesticBankAccountProps {
-    companyBankAccount: DomesticBankAccount
-    rowIdx: number
+    companyBankAccount: DomesticBankAccount;
+    rowIdx: number;
 }
 export const ShowDomesticBankAccount: React.FC<ShowDomesticBankAccountProps> = (props) => {
     return (
