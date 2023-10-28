@@ -28,12 +28,24 @@ const PublicArea = (): JSX.Element => {
             <Router>
                 <PublicHeader />
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/companyBankAccounts" element={<CompanyBankAccounts />} />
-                    <Route path="/companyCryptoWallet" element={<CompanyCryptoWallet />} />
-                    <Route path="/contactUs" element={<ContactUs />} />
-                    <Route path="/showdomaindetail/-/mrdomainRoute/shortDomainInfo/:domain" element={<ShortDomainInfoPage />} />
-                    <Route path="/showdomaindetail/-/mrdomainRoute/domainInfo/:tldPart/:domainPart" element={<FullDomainInfoPage />} />
+                    <Route path='/' element={<Home />} />
+                    <Route
+                        path='/companyBankAccounts'
+                        element={<CompanyBankAccounts />}
+                    />
+                    <Route
+                        path='/companyCryptoWallet'
+                        element={<CompanyCryptoWallet />}
+                    />
+                    <Route path='/contactUs' element={<ContactUs />} />
+                    <Route
+                        path='/showdomaindetail/-/mrdomainRoute/shortDomainInfo/:domain'
+                        element={<ShortDomainInfoPage />}
+                    />
+                    <Route
+                        path='/showdomaindetail/-/mrdomainRoute/domainInfo/:tldPart/:domainPart'
+                        element={<FullDomainInfoPage />}
+                    />
                 </Routes>
                 <PublicFooter />
             </Router>
