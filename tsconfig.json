@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2017", // یا "esnext"
-    "module": "es2022", // یا "esnext" یا "system" یا "node16" یا "nodenext"
+    //"module": "es2022", // یا "esnext" یا "system" یا "node16" یا "nodenext"
     "lib": [
       "dom",
       "dom.iterable",
