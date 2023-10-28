@@ -85,6 +85,24 @@ export const FullDomainInfoPage = (): JSX.Element => {
                                         فرمایید</h5>
                                 </div>
                             </div>
+                            <div className="row">
+                                <div className="col-3">
+                                    <h5>موبایل ۱ :</h5>
+                                </div>
+                                <div className="col-9">
+                                    <h5><span dir="ltr">{userDetails.mobile1}</span></h5>
+                                </div>
+                            </div>
+                            {userDetails.mobile2 !== null && userDetails.mobile2 !== undefined && userDetails.mobile2 !== '' && (
+                                <div className="row">
+                                    <div className="col-3">
+                                        <h5>موبایل ۲ :</h5>
+                                    </div>
+                                    <div className="col-9">
+                                        <h5><span dir="ltr">{userDetails.mobile2}</span></h5>
+                                    </div>
+                                </div>
+                            )}
                             <div className="row" >
                                 <div className="col-3">
                                     <h5>تلفن تماس ۱ (10 خط) :</h5>
@@ -99,22 +117,6 @@ export const FullDomainInfoPage = (): JSX.Element => {
                                 </div>
                                 <div className="col-9">
                                     <h5><span dir="ltr">{userDetails.phone2}</span></h5>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-3">
-                                    <h5>موبایل ۱ :</h5>
-                                </div>
-                                <div className="col-9">
-                                    <h5><span dir="ltr">{userDetails.mobile1}</span></h5>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-3">
-                                    <h5>موبایل ۲ :</h5>
-                                </div>
-                                <div className="col-9">
-                                    <h5><span dir="ltr">{userDetails.mobile2}</span></h5>
                                 </div>
                             </div>
                             <h5><span className="ti-control-backward mr-2 color-primary"></span>لطفا دقت فرمایید برای خرید دامنه و یا اطلاع
