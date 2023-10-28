@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 // import { Link, useNavigate } from 'react-router-dom';
 export const PublicNavMenu = (): JSX.Element => {
-   // const { t, i18n } = useTranslation()
-   // let navigate = useNavigate()
+    // const { t, i18n } = useTranslation()
+    // let navigate = useNavigate()
     function onClick (event: React.MouseEvent<HTMLAnchorElement>): void {
         event.preventDefault();
     }
@@ -90,6 +90,43 @@ export const PublicNavMenu = (): JSX.Element => {
                                                 </a>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li className="nav-item hs-has-mega-menu custom-nav-item"
+                                data-max-width="360px" data-position="right"><a
+                                    id="supportMegaMenu"
+                                    className="nav-link custom-nav-link main-link-toggle"
+                                    href="JavaScript:Void(0);" aria-haspopup="true"
+                                    aria-expanded="false">پشتیبانی</a>
+                                <div className="hs-mega-menu main-sub-menu"
+                                    aria-labelledby="supportMegaMenu" style={ { minWidth: '330px;' } }>
+
+                                    <div className="title-with-icon-item">
+                                        <a className="title-with-icon-link" href="https://crm.mrdomain.ir/register.php">
+                                            <div className="media align-items-center">
+                                                <img className="menu-titile-icon" src="/assets/Hostlar/assets/img/chat.svg"
+                                                    alt="SVG" />
+                                                <div className="media-body">
+                                                    <span className="u-header__promo-title">ارسال تیکت </span> <small
+                                                        className="u-header__promo-text">پاسخ سریع تیم
+                                                        پشتیبانی</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div className="title-with-icon-item">
+                                        <a className="title-with-icon-link" href="#">
+                                            <div className="media align-items-center">
+                                                <img className="menu-titile-icon" src="/assets/Hostlar/assets/img/support.svg"
+                                                    alt="SVG" />
+                                                <div className="media-body">
+                                                    <span className="u-header__promo-title">پشتیبانی 24/7</span> <small
+                                                        className="u-header__promo-text">پشتیبانی عالی</small>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </li>
