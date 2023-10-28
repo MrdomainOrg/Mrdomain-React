@@ -101,12 +101,12 @@ export const PublicNavMenu = (): JSX.Element => {
                                     href="JavaScript:Void(0);" aria-haspopup="true"
                                     aria-expanded="false">پشتیبانی</a>
                                 <div className="hs-mega-menu main-sub-menu"
-                                    aria-labelledby="supportMegaMenu" style={ { minWidth: '330px;' } }>
+                                    aria-labelledby="supportMegaMenu" style={{ minWidth: '330px;' }}>
 
                                     <div className="title-with-icon-item">
                                         <a className="title-with-icon-link" href="https://crm.mrdomain.ir/register.php">
                                             <div className="media align-items-center">
-                                                <img className="menu-titile-icon" src="/assets/Hostlar/assets/img/chat.svg"
+                                                <img className="menu-titile-icon" src="/assets/img/chat.svg"
                                                     alt="SVG" />
                                                 <div className="media-body">
                                                     <span className="u-header__promo-title">ارسال تیکت </span> <small
@@ -119,7 +119,7 @@ export const PublicNavMenu = (): JSX.Element => {
                                     <div className="title-with-icon-item">
                                         <a className="title-with-icon-link" href="#">
                                             <div className="media align-items-center">
-                                                <img className="menu-titile-icon" src="/assets/Hostlar/assets/img/support.svg"
+                                                <img className="menu-titile-icon" src="/assets/img/support.svg"
                                                     alt="SVG" />
                                                 <div className="media-body">
                                                     <span className="u-header__promo-title">پشتیبانی 24/7</span> <small
@@ -127,6 +127,113 @@ export const PublicNavMenu = (): JSX.Element => {
                                                 </div>
                                             </div>
                                         </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="nav-item hs-has-mega-menu custom-nav-item"
+                                data-max-width="250px" data-position="right"><a
+                                    id="aboutMegaMenu"
+                                    className="nav-link custom-nav-link main-link-toggle"
+                                    href="JavaScript:Void(0);" aria-haspopup="true"
+                                    aria-expanded="false">درباره ما</a>
+                                <div className="hs-mega-menu main-sub-menu"
+                                    aria-labelledby="aboutMegaMenu" style={{ minWidth: '330px;' }} >
+
+                                    <div className="title-with-icon-item">
+                                        <Link className="title-with-icon-link" to="/contactUs">تماس باما
+                                            <div className="media align-items-center">
+                                                <img className="menu-titile-icon"
+                                                    src="/assets/img/chat-mobile.svg" alt="SVG" />
+                                                <div className="media-body">
+                                                    <span className="u-header__promo-title">تماس با ما</span> <small
+                                                        className="u-header__promo-text">اگه مشکلی دارید باما تماس بگیرید</small>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div className="title-with-icon-item">
+                                        <a className="title-with-icon-link" href="#">
+                                            <div className="media align-items-center">
+                                                <img className="menu-titile-icon" src="/assets/img/community.svg"
+                                                    alt="SVG" />
+                                                <div className="media-body">
+                                                    <span className="u-header__promo-title">درباره ما</span> <small
+                                                        className="u-header__promo-text">ما شرکت هاستینگ پیشرو
+                                                        هستیم</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div className="title-with-icon-item">
+                                        <a className="title-with-icon-link" href="#">
+                                            <div className="media align-items-center">
+                                                <img className="menu-titile-icon"
+                                                    src="/assets/img/user-behaver.svg" alt="SVG" />
+                                                <div className="media-body">
+                                                    <span className="u-header__promo-title">نظر مشتریان</span> <small
+                                                        className="u-header__promo-text">بیش از 100 مشتری راضی</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div className="title-with-icon-item">
+                                        <a className="title-with-icon-link" href="#">
+                                            <div className="media align-items-center">
+                                                <img className="menu-titile-icon" src="/assets/img/partner.svg"
+                                                    alt="SVG" />
+                                                <div className="media-body">
+                                                    <span className="u-header__promo-title">همکاران ما</span> <small
+                                                        className="u-header__promo-text">ما شرکای قابل اعتمادی
+                                                        در سطح جهانی داریم</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div className="title-with-icon-item">
+                                        <a className="title-with-icon-link" href="#">
+                                            <div className="media align-items-center">
+                                                <img className="menu-titile-icon" src="/assets/img/network.svg"
+                                                    alt="SVG" />
+                                                <div className="media-body">
+                                                    <span className="u-header__promo-title">شبکه</span> <small
+                                                        className="u-header__promo-text">داده های خود را ایمن
+                                                        نگه دارید</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div className="title-with-icon-item">
+                                        <a className="title-with-icon-link" href="#">
+                                            <div className="media align-items-center">
+                                                <img className="menu-titile-icon" src="/assets/img/blog.svg"
+                                                    alt="SVG" />
+                                                <div className="media-body">
+                                                    <span className="u-header__promo-title">بلاگ</span> <small
+                                                        className="u-header__promo-text">آخرین اخبار شرکت</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div className="u-header__promo-footer pb-0">
+                                        <div className="row no-gutters align-bottom">
+                                            <div className="col-9">
+                                                <div className="u-header__promo-footer-item">
+                                                    <span className="u-header__promo-title">پیام شرکت</span>
+                                                    <p className="small d-inline-flex">
+                                                        تغییرات جدید... <a
+                                                            href="#"
+                                                            className="popup-youtube video-play-icon"><span
+                                                                className="ti-control-play"></span> </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="col-3">
+                                                <div className="d-flex align-bottom">
+                                                    <img src="/assets/img/ceo.png" width="300" alt="ceo"
+                                                        className="img-fluid" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
