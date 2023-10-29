@@ -13,7 +13,7 @@ export const priceConfig = {
 
 export const userDetails = {
     mobile1: '0920 383 5166',
-    mobile2: '0935 387 5166',
+    mobile2: '',
     phone1: '021 9101 4745',
     phone2: '021 9101 5166'
 };
