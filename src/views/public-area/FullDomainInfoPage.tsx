@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
 import { priceConfig, userDetails } from '../../constants/SiteConfigs';
+import { doesStringHasValue } from '../../utils/stringUtil';
 export const FullDomainInfoPage = (): JSX.Element => {
     const { domainPart, tldPart } = useParams();
     const domain = domainPart + '.' + tldPart;
@@ -85,6 +86,7 @@ export const FullDomainInfoPage = (): JSX.Element => {
                                         فرمایید</h5>
                                 </div>
                             </div>
+                            {doesStringHasValue(userDetails.mobile1) && (
                             <div className="row">
                                 <div className="col-3">
                                     <h5>موبایل ۱ :</h5>
@@ -93,7 +95,8 @@ export const FullDomainInfoPage = (): JSX.Element => {
                                     <h5><span dir="ltr">{userDetails.mobile1}</span></h5>
                                 </div>
                             </div>
-                            {userDetails.mobile2 !== null && userDetails.mobile2 !== undefined && userDetails.mobile2 !== '' && (
+                            )}
+                            {doesStringHasValue(userDetails.mobile2) && (
                                 <div className="row">
                                     <div className="col-3">
                                         <h5>موبایل ۲ :</h5>
@@ -103,6 +106,27 @@ export const FullDomainInfoPage = (): JSX.Element => {
                                     </div>
                                 </div>
                             )}
+                            {doesStringHasValue(userDetails.mobile3) && (
+                                <div className="row">
+                                    <div className="col-3">
+                                        <h5>موبایل ۳ :</h5>
+                                    </div>
+                                    <div className="col-9">
+                                        <h5><span dir="ltr">{userDetails.mobile3}</span></h5>
+                                    </div>
+                                </div>
+                            )}
+                            {doesStringHasValue(userDetails.mobile4) && (
+                                <div className="row">
+                                    <div className="col-3">
+                                        <h5>موبایل ۴ :</h5>
+                                    </div>
+                                    <div className="col-9">
+                                        <h5><span dir="ltr">{userDetails.mobile4}</span></h5>
+                                    </div>
+                                </div>
+                            )}
+                            {doesStringHasValue(userDetails.phone1) && (
                             <div className="row" >
                                 <div className="col-3">
                                     <h5>تلفن تماس ۱ (10 خط) :</h5>
@@ -111,6 +135,8 @@ export const FullDomainInfoPage = (): JSX.Element => {
                                     <h5><span dir="ltr">{userDetails.phone1}</span></h5>
                                 </div>
                             </div>
+                            )}
+                            {doesStringHasValue(userDetails.phone2) && (
                             <div className="row">
                                 <div className="col-3">
                                     <h5>تلفن تماس ۲ (10 خط) :</h5>
@@ -119,6 +145,27 @@ export const FullDomainInfoPage = (): JSX.Element => {
                                     <h5><span dir="ltr">{userDetails.phone2}</span></h5>
                                 </div>
                             </div>
+                            )}
+                            {doesStringHasValue(userDetails.phone3) && (
+                            <div className="row">
+                                <div className="col-3">
+                                    <h5>تلفن تماس ۳ (10 خط) :</h5>
+                                </div>
+                                <div className="col-9">
+                                    <h5><span dir="ltr">{userDetails.phone3}</span></h5>
+                                </div>
+                            </div>
+                            )}
+                            {doesStringHasValue(userDetails.phone4) && (
+                            <div className="row">
+                                <div className="col-3">
+                                    <h5>تلفن تماس ۴ (10 خط) :</h5>
+                                </div>
+                                <div className="col-9">
+                                    <h5><span dir="ltr">{userDetails.phone4}</span></h5>
+                                </div>
+                            </div>
+                            )}
                             <h5><span className="ti-control-backward mr-2 color-primary"></span>لطفا دقت فرمایید برای خرید دامنه و یا اطلاع
                                 از قیمت آن فقط تماس تلفنی بگیرید و از ارسال ایمیل و یا پیام در کلیه شبکه های اجتماعی خودداری فرمایید</h5>
                             <h5><span className="ti-control-backward mr-2 color-primary"></span>لطفا دقت فرمایید اگر در مورد دامنه های خاص

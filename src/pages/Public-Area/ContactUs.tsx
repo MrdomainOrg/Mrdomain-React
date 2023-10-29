@@ -27,7 +27,7 @@ export const ContactUs = (): JSX.Element => {
                                     </div>
                                     <div>
                                         <h5 className="mb-0">تلفن</h5>
-                                        <p className="text-muted mb-0">{siteConfig.companyPhone}</p>
+                                        <p className="text-muted mb-0"><span dir='ltr'>{siteConfig.companyPhone}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@ export const ContactUs = (): JSX.Element => {
                                     {siteConfig.companyAddress}
                                 </address>
                                 <br />
-                                <span>تلفن: {siteConfig.companyPhone}</span> <br />
+                                <span>تلفن: <span dir='ltr'>{siteConfig.companyPhone}</span></span> <br />
                                     <span>ایمیل <a href="mailto:info@mrdomain.ir" className="link-color">{siteConfig.siteEmail}</a></span>
                             </div>
                         </div>
