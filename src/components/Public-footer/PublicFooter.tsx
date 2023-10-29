@@ -11,7 +11,7 @@ export const PublicFooter = (): JSX.Element => {
                                 <div className="col-md-3 col-sm-6">
                                     <div className="footer-nav-wrap text-white">
                                         <h4 className="text-white">مجوزها</h4>
-                                        <p><a referrerPolicy="origin" rel="noreferrer" target="_blank" href="https://trustseal.enamad.ir/?id=90500&amp;Code=Wb0sjCeDW7zzNYHUPr3Y">
+                                        <p><a referrerPolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=90500&amp;Code=Wb0sjCeDW7zzNYHUPr3Y">
                                             <img referrerPolicy='origin' src='https://Trustseal.eNamad.ir/logo.aspx?id=90500&amp;Code=Wb0sjCeDW7zzNYHUPr3Y' alt='' style={ { cursor: 'pointer' } } id='Wb0sjCeDW7zzNYHUPr3Y' /></a></p>
                                     </div>
                                 </div>
