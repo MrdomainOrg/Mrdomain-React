@@ -5,17 +5,25 @@ import { doesStringHasValue } from '../../utils/stringUtil';
 import { useQuery } from 'react-query';
 import Axios from 'axios';
 import { type MarketStatsData } from '../../modules/cryptoCurrency/type/CryptoTypes';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 export const FullDomainInfoPage = (): JSX.Element => {
     const [usdtPrice, setUsdtPrice] = useState<number>(priceConfig.usdInTomanMinimum);
     const { domainPart, tldPart } = useParams();
     const domain = domainPart + '.' + tldPart;
-    const { data, isLoading, isError } = useQuery(['usdtPrice'], async () => {
+
+    const { data } = useQuery(['usdtPrice'], async () => {
         const response = await Axios.get<MarketStatsData>('https://api.nobitex.ir/market/stats?srcCurrency=usdt&dstCurrency=rls');
         return response.data;
     });
 
-    
+    useEffect(() => {
+        const dayHigh = data?.stats['usdt-rls']?.dayHigh;
+        const dayHighAsNumber = dayHigh !== null && dayHigh !== undefined ? parseFloat(dayHigh) / 10 : 0;
+        if (dayHighAsNumber > priceConfig.usdInTomanMinimum) {
+            setUsdtPrice(dayHighAsNumber);
+        }
+        console.log('USDT Price is : ', dayHighAsNumber);
+    }, [data]);
     return (
         <div className="main">
             <section className="feature-section ptb-100">
