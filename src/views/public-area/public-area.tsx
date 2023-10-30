@@ -20,35 +20,39 @@ import { ContactUs } from '../../pages/Public-Area/ContactUs';
 import { PublicFooter } from '../../components/Public-footer/PublicFooter';
 import { ShortDomainInfoPage } from './ShortDomainInfoPage';
 import { FullDomainInfoPage } from './FullDomainInfoPage';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 //  const publicAreaPath = process.env.PUBLIC_URL;
+const client = new QueryClient();
 const PublicArea = (): JSX.Element => {
     return (
         <>
-            <Router>
-                <PublicHeader />
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route
-                        path='/companyBankAccounts'
-                        element={<CompanyBankAccounts />}
-                    />
-                    <Route
-                        path='/companyCryptoWallet'
-                        element={<CompanyCryptoWallet />}
-                    />
-                    <Route path='/contactUs' element={<ContactUs />} />
-                    <Route
-                        path='/showdomaindetail/-/mrdomainRoute/shortDomainInfo/:domain'
-                        element={<ShortDomainInfoPage />}
-                    />
-                    <Route
-                        path='/showdomaindetail/-/mrdomainRoute/domainInfo/:tldPart/:domainPart'
-                        element={<FullDomainInfoPage />}
-                    />
-                </Routes>
-                <PublicFooter />
-            </Router>
+            <QueryClientProvider client={client}>
+                <Router>
+                    <PublicHeader />
+                    <Routes>
+                        <Route path='/' element={<Home />} />
+                        <Route
+                            path='/companyBankAccounts'
+                            element={<CompanyBankAccounts />}
+                        />
+                        <Route
+                            path='/companyCryptoWallet'
+                            element={<CompanyCryptoWallet />}
+                        />
+                        <Route path='/contactUs' element={<ContactUs />} />
+                        <Route
+                            path='/showdomaindetail/-/mrdomainRoute/shortDomainInfo/:domain'
+                            element={<ShortDomainInfoPage />}
+                        />
+                        <Route
+                            path='/showdomaindetail/-/mrdomainRoute/domainInfo/:tldPart/:domainPart'
+                            element={<FullDomainInfoPage />}
+                        />
+                    </Routes>
+                    <PublicFooter />
+                </Router>
+            </QueryClientProvider>
         </>
     );
 };

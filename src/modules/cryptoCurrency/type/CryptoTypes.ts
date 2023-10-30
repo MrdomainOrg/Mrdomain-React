@@ -27,3 +27,22 @@ export interface MarketData {
   stats: Record<string, MarketStats>;
   global: CryptoGlobalData;
 };
+
+export interface MarketStatsData {
+  status: string;
+  stats: {
+    'usdt-rls': {
+      isClosed: boolean;
+      bestSell: string;
+      bestBuy: string;
+      volumeSrc: string;
+      volumeDst: string;
+      latest: string;
+      dayLow: string;
+      dayHigh: string;
+      dayOpen: string;
+      dayClose: string;
+      dayChange: string;
+    };
+  };
+};
