@@ -46,3 +46,38 @@ export interface MarketStatsData {
     };
   };
 };
+
+export enum CryptoNetworkId {
+  BTC = 'Bitcoin',
+  ETH = 'Ethereum',
+  BNB = 'Binance Network',
+  BSC = 'Binance Smart Chain',
+  TRX = 'Tron',
+  DOGE = 'Dogecoin',
+  LTC = 'Litecoin',
+  POLYGON = 'Polygon',
+  ADA = 'Cardano'
+};
+
+export enum CryptoNetworkTypeId {
+  BTC = 'BTC',
+  ETH = 'ERC20',
+  BNB = 'BEP2(BC)',
+  BSC = 'BEP20(BSC)',
+  TRX = 'TRC20',
+  TRON = 'Tron',
+  DOGE = 'Dogecoin',
+  LTC = 'Litecoin',
+  POLYGON = 'Polygon',
+  ADA = 'Cardano'
+};
+
+export interface CryptoAccount {
+  coinName: string;
+  symbol: string;
+  cryptoNetwork: CryptoNetworkTypeId;
+  cryptoAddress: string;
+  isActive: boolean;
+  isToken: boolean;
+  isMultiNetwork: boolean;
+};
