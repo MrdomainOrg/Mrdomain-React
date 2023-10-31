@@ -69,8 +69,26 @@ export enum CryptoNetworkTypeId {
   DOGE = 'Dogecoin',
   LTC = 'Litecoin',
   POLYGON = 'Polygon',
-  ADA = 'Cardano'
+  ADA = 'Cardano',
+  XRP = 'Ripple',
+  XMR = 'Monero'
 };
+
+export enum CoinId {
+  BTC,
+  ETH,
+  MATIC,
+  TRX,
+  ADA,
+  LTC,
+  DOGE,
+  BNB,
+  DAI,
+  USDC,
+  USDT,
+  XMR,
+  XRP
+}
 
 export interface CryptoAccount {
   coinName: string;
