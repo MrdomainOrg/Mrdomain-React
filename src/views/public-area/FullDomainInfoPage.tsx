@@ -2,19 +2,14 @@ import { useParams } from 'react-router-dom';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
 import { priceConfig, userDetails } from '../../constants/SiteConfigs';
 import { doesStringHasValue } from '../../utils/stringUtil';
-import { useQuery } from 'react-query';
-import Axios from 'axios';
-import { type MarketStatsData } from '../../modules/cryptoCurrency/type/CryptoTypes';
 import { useEffect, useState } from 'react';
+import { useUsdtToIrtPrice } from '../../modules/cryptoCurrency/hook/useUsdtToIrtPrice';
 export const FullDomainInfoPage = (): JSX.Element => {
     const [usdtPrice, setUsdtPrice] = useState<number>(priceConfig.usdInTomanMinimum);
     const { domainPart, tldPart } = useParams();
     const domain = domainPart + '.' + tldPart;
 
-    const { data } = useQuery(['usdtPrice'], async () => {
-        const response = await Axios.get<MarketStatsData>('https://api.nobitex.ir/market/stats?srcCurrency=usdt&dstCurrency=rls');
-        return response.data;
-    });
+    const { data } = useUsdtToIrtPrice();
 
     useEffect(() => {
         const dayHigh = data?.stats['usdt-rls']?.dayHigh;
