@@ -21,12 +21,17 @@ import { PublicFooter } from '../../components/Public-footer/PublicFooter';
 import { ShortDomainInfoPage } from './ShortDomainInfoPage';
 import { FullDomainInfoPage } from './FullDomainInfoPage';
 import { QueryClient, QueryClientProvider } from 'react-query';
+// import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 //  const publicAreaPath = process.env.PUBLIC_URL;
 const client = new QueryClient();
 const PublicArea = (): JSX.Element => {
     return (
         <>
+            {/* <HelmetProvider>
+                <Helmet>
+                </Helmet>
+            </HelmetProvider> */}
             <QueryClientProvider client={client}>
                 <Router>
                     <PublicHeader />
