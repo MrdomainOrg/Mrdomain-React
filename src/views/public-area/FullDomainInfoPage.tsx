@@ -6,10 +6,12 @@ import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil
 import { priceConfig, userDetails } from '../../constants/SiteConfigs';
 import doesStringHasValue from '../../utils/stringUtil/StringUtil';
 import NobitexService from '../../modules/cryptoCurrency/services/NobitexService';
-import { UsdtToIrtPriceData } from '../../modules/cryptoCurrency/hook/useUsdtToIrtPrice';
+import { setDomainDetails } from '../../redux/domainDetailsSlice';
+import OldMrdomainPublicService from '../../modules/domainDetail/services/OldMrdomainPublicService';
 
 const FullDomainInfoPage = (): JSX.Element => {
   const usdtPrice = useAppSelector((state) => state.usdtPrice);
+  const domainDetails = useAppSelector((state) => state.domainDetails);
   const dispatch = useAppDispatch();
   const { domainPart, tldPart } = useParams();
   const domain = `${domainPart}.${tldPart}`;
@@ -32,8 +34,26 @@ const FullDomainInfoPage = (): JSX.Element => {
         console.error('Error fetching data:', error);
       }
     };
+    const fetchDomainDetails = async () => {
+      try {
+        const response =
+          await OldMrdomainPublicService.findOldDomainDetailsPricePromise(
+            domain,
+          );
+        const data = response;
+        const domainData = data?.data;
+        dispatch(setDomainDetails(domainData));
+        // custom console
+        console.log('Domain Data is : ', domainData.domainName);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
     if (!usdtPrice.isSet) {
       fetchData();
+    }
+    if (!domainDetails.isSet) {
+      fetchDomainDetails();
     }
     // console.log('USDT Price is : ', dayHighAsNumber);
   }, []);
@@ -98,9 +118,7 @@ const FullDomainInfoPage = (): JSX.Element => {
                 </div>
                 <div className="col-9">
                   <h5>
-                    {formatNumberWithCommas(
-                      priceConfig.minimumDomainPriceInUsd,
-                    )}{' '}
+                    {formatNumberWithCommas(domainDetails.domainPriceInUSD)}{' '}
                     (تتر / دلار)
                   </h5>
                 </div>
@@ -112,31 +130,34 @@ const FullDomainInfoPage = (): JSX.Element => {
                 <div className="col-9">
                   <h5>
                     {formatNumberWithCommas(
-                      priceConfig.minimumDomainPriceInUsd * usdtPrice.price,
+                      domainDetails.domainPriceInUSD * usdtPrice.price,
                     )}{' '}
                     تومان
                   </h5>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-3">
-                  <h5>قیمت به دلار :</h5>
+              {domainDetails.domainPriceInUSD ===
+                priceConfig.minimumDomainPriceInUsd && (
+                <div className="row">
+                  <div className="col-3">
+                    <h5>قیمت به دلار :</h5>
+                  </div>
+                  <div className="col-9">
+                    <h5>
+                      لطفا دقت فرمایید حداقل قیمت دامنه های این شرکت از{' '}
+                      {formatNumberWithCommas(
+                        priceConfig.minimumDomainPriceInUsd,
+                      )}{' '}
+                      دلار آمریکا (USD) معادل{' '}
+                      {formatNumberWithCommas(
+                        priceConfig.minimumDomainPriceInUsd * usdtPrice.price,
+                      )}{' '}
+                      تومان به بالا می باشد لطفا تحت هیچ شرایطی برای قیمتهای
+                      کمتر از تماس گرفتن جدا خود داری فرمایید
+                    </h5>
+                  </div>
                 </div>
-                <div className="col-9">
-                  <h5>
-                    لطفا دقت فرمایید حداقل قیمت دامنه های این شرکت از{' '}
-                    {formatNumberWithCommas(
-                      priceConfig.minimumDomainPriceInUsd,
-                    )}{' '}
-                    دلار آمریکا (USD) معادل{' '}
-                    {formatNumberWithCommas(
-                      priceConfig.minimumDomainPriceInUsd * usdtPrice.price,
-                    )}{' '}
-                    تومان به بالا می باشد لطفا تحت هیچ شرایطی برای قیمتهای کمتر
-                    از تماس گرفتن جدا خود داری فرمایید
-                  </h5>
-                </div>
-              </div>
+              )}
               {doesStringHasValue(userDetails.mobile1) && (
                 <div className="row">
                   <div className="col-3">

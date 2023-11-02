@@ -17,6 +17,7 @@ export interface OldDomainDetailsState {
   usdtToToman?: number | null;
   commentInPersian?: string | null;
   commentInEnglish?: string | null;
+  isSet?: boolean;
 }
 
 // Define the initial state using that type
@@ -36,6 +37,7 @@ const initialState: OldDomainDetailsState = {
   usdtToToman: priceConfig.usdInTomanMinimum,
   commentInPersian: '',
   commentInEnglish: '',
+  isSet: false,
 };
 
 export const domainDetailsSlice = createSlice({
@@ -50,13 +52,20 @@ export const domainDetailsSlice = createSlice({
       state.domainLength = action.payload.domainLength;
       state.tldPart = action.payload.tldPart;
       state.domainPriceInToman = action.payload.domainPriceInToman;
-      state.domainPriceInUSD = action.payload.domainPriceInUSD;
+      if (
+        action.payload.domainPriceInUSD !== null &&
+        action.payload.domainPriceInUSD !== undefined &&
+        action.payload.domainPriceInUSD > 0
+      ) {
+        state.domainPriceInUSD = action.payload.domainPriceInUSD;
+      }
       state.persianName = action.payload.persianName;
       state.visitedCount = action.payload.visitedCount;
       state.priceType = action.payload.priceType;
       state.usdtToToman = action.payload.usdtToToman;
       state.commentInPersian = action.payload.commentInPersian;
       state.commentInEnglish = action.payload.commentInEnglish;
+      state.isSet = true;
     },
   },
 });

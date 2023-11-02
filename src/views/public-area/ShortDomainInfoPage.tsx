@@ -6,6 +6,8 @@ import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil
 import NobitexService from '../../modules/cryptoCurrency/services/NobitexService';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setUsdtPrice } from '../../redux/usdtPriceSlice';
+import { setDomainDetails } from '../../redux/domainDetailsSlice';
+import OldMrdomainPublicService from '../../modules/domainDetail/services/OldMrdomainPublicService';
 
 const ShortDomainInfoPage = (): JSX.Element => {
   const { domain } = useParams();
@@ -16,9 +18,10 @@ const ShortDomainInfoPage = (): JSX.Element => {
     priceConfig.minimumDomainPriceInUsd,
   );
   const usdtPrice = useAppSelector((state) => state.usdtPrice);
+  const domainDetails = useAppSelector((state) => state.domainDetails);
   const dispatch = useAppDispatch();
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchUsdtPriceData = async () => {
       try {
         const response = await NobitexService.findUsdtTiRialPrice();
         const data = response;
@@ -36,8 +39,26 @@ const ShortDomainInfoPage = (): JSX.Element => {
         console.error('Error fetching data:', error);
       }
     };
+    const fetchDomainDetails = async () => {
+      try {
+        const response =
+          await OldMrdomainPublicService.findOldDomainDetailsPricePromise(
+            domain,
+          );
+        const data = response;
+        const domainData = data?.data;
+        dispatch(setDomainDetails(domainData));
+        // custom console
+        console.log('Domain Data is : ', domainData.domainName);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
     if (!usdtPrice.isSet) {
-      fetchData();
+      fetchUsdtPriceData();
+    }
+    if (!domainDetails.isSet) {
+      fetchDomainDetails();
     }
     // console.log('USDT Price is : ', dayHighAsNumber);
   }, []);
