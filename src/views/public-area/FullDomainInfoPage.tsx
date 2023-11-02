@@ -1,28 +1,43 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useQuery } from 'react-query';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { setUsdtPrice } from '../../redux/usdtPriceSlice';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
 import { priceConfig, userDetails } from '../../constants/SiteConfigs';
 import doesStringHasValue from '../../utils/stringUtil/StringUtil';
-import useUsdtToIrtPrice from '../../modules/cryptoCurrency/hook/useUsdtToIrtPrice';
+import NobitexService from '../../modules/cryptoCurrency/services/NobitexService';
+import { UsdtToIrtPriceData } from '../../modules/cryptoCurrency/hook/useUsdtToIrtPrice';
 
 const FullDomainInfoPage = (): JSX.Element => {
-  const [usdtPrice, setUsdtPrice] = useState<number>(
-    priceConfig.usdInTomanMinimum,
-  );
+  const usdtPrice = useAppSelector((state) => state.usdtPrice);
+  const dispatch = useAppDispatch();
   const { domainPart, tldPart } = useParams();
   const domain = `${domainPart}.${tldPart}`;
-
-  const { data } = useUsdtToIrtPrice();
-
   useEffect(() => {
-    const dayHigh = data?.stats['usdt-rls']?.dayHigh;
-    const dayHighAsNumber =
-      dayHigh !== null && dayHigh !== undefined ? parseFloat(dayHigh) / 10 : 0;
-    if (dayHighAsNumber > priceConfig.usdInTomanMinimum) {
-      setUsdtPrice(dayHighAsNumber);
+    const fetchData = async () => {
+      try {
+        const response = await NobitexService.findUsdtTiRialPrice();
+        const data = response;
+        const dayHigh = data?.stats['usdt-rls']?.dayHigh;
+        const dayHighAsNumber =
+          dayHigh !== null && dayHigh !== undefined
+            ? parseFloat(dayHigh) / 10
+            : 0;
+        if (dayHighAsNumber > priceConfig.usdInTomanMinimum) {
+          // setUsdtPrice(dayHighAsNumber);
+          dispatch(setUsdtPrice(dayHighAsNumber));
+        }
+        // console.log('USDT Price is : ', dayHighAsNumber);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    if (!usdtPrice.isSet) {
+      fetchData();
     }
     // console.log('USDT Price is : ', dayHighAsNumber);
-  }, [data]);
+  }, []);
   return (
     <div className="main">
       <section className="feature-section ptb-100">
@@ -98,7 +113,7 @@ const FullDomainInfoPage = (): JSX.Element => {
                 <div className="col-9">
                   <h5>
                     {formatNumberWithCommas(
-                      priceConfig.minimumDomainPriceInUsd * usdtPrice,
+                      priceConfig.minimumDomainPriceInUsd * usdtPrice.price,
                     )}{' '}
                     تومان
                   </h5>

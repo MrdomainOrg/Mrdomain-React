@@ -8,6 +8,13 @@ const apiClient = axios.create({
   },
 });
 
+const findUsdtTiRialPricePromise = async (): Promise<MarketStatsData> => {
+  const response = await apiClient.get<MarketStatsData>(
+    '/market/stats?srcCurrency=usdt&dstCurrency=rls',
+  );
+  return response.data;
+};
+
 const findUsdtTiRialPrice = async (): Promise<MarketStatsData> => {
   const response = await apiClient.get<MarketStatsData>(
     '/market/stats?srcCurrency=usdt&dstCurrency=rls',
@@ -17,6 +24,7 @@ const findUsdtTiRialPrice = async (): Promise<MarketStatsData> => {
 
 const NobitexService = {
   findUsdtTiRialPrice,
+  findUsdtTiRialPricePromise,
 };
 
 export default NobitexService;

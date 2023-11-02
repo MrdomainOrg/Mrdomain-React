@@ -6,7 +6,7 @@ import { type MarketStatsData } from '../type/CryptoTypes';
 //   return axios.get('https://api.nobitex.ir/market/stats?srcCurrency=usdt&dstCurrency=rls')}
 // )
 
-interface UsdtToIrtPriceData {
+export interface UsdtToIrtPriceData {
   data: MarketStatsData | null | undefined;
   isLoading: boolean;
   isError: boolean;
@@ -16,7 +16,7 @@ interface UsdtToIrtPriceData {
 const useUsdtToIrtPrice = (): UsdtToIrtPriceData => {
   const { data, isLoading, isError, error } = useQuery(
     'marketStats',
-    NobitexService.findUsdtTiRialPrice,
+    NobitexService.findUsdtTiRialPricePromise,
   );
   return { data, isLoading, isError, error };
 };
