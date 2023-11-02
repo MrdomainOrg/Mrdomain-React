@@ -58,6 +58,7 @@ export const domainDetailsSlice = createSlice({
         action.payload.domainPriceInUSD > 0
       ) {
         state.domainPriceInUSD = action.payload.domainPriceInUSD;
+        state.isSet = true;
       }
       state.persianName = action.payload.persianName;
       state.visitedCount = action.payload.visitedCount;
@@ -65,7 +66,6 @@ export const domainDetailsSlice = createSlice({
       state.usdtToToman = action.payload.usdtToToman;
       state.commentInPersian = action.payload.commentInPersian;
       state.commentInEnglish = action.payload.commentInEnglish;
-      state.isSet = true;
     },
   },
 });
