@@ -1,8 +1,7 @@
 export interface CryptoMarketData {
   status: string;
   markets: Record<string, Record<string, number>>;
-
-};
+}
 
 export interface MarketStats {
   isClosed: boolean;
@@ -16,17 +15,17 @@ export interface MarketStats {
   dayOpen: string;
   dayClose: string;
   dayChange: string;
-};
+}
 
 export interface CryptoGlobalData {
   binance: Record<string, number>;
-};
+}
 
 export interface MarketData {
   status: string;
   stats: Record<string, MarketStats>;
   global: CryptoGlobalData;
-};
+}
 
 export interface MarketStatsData {
   status: string;
@@ -45,7 +44,7 @@ export interface MarketStatsData {
       dayChange: string;
     };
   };
-};
+}
 
 export enum CryptoNetworkId {
   BTC = 'Bitcoin',
@@ -56,8 +55,8 @@ export enum CryptoNetworkId {
   DOGE = 'Dogecoin',
   LTC = 'Litecoin',
   POLYGON = 'Polygon',
-  ADA = 'Cardano'
-};
+  ADA = 'Cardano',
+}
 
 export enum CryptoNetworkTypeId {
   BTC = 'BTC',
@@ -71,8 +70,8 @@ export enum CryptoNetworkTypeId {
   POLYGON = 'Polygon',
   ADA = 'Cardano',
   XRP = 'Ripple',
-  XMR = 'Monero'
-};
+  XMR = 'Monero',
+}
 
 export enum CoinId {
   BTC,
@@ -87,7 +86,7 @@ export enum CoinId {
   USDC,
   USDT,
   XMR,
-  XRP
+  XRP,
 }
 
 export interface CryptoAccount {
@@ -98,4 +97,4 @@ export interface CryptoAccount {
   isActive: boolean;
   isToken: boolean;
   isMultiNetwork: boolean;
-};
+}

@@ -13,7 +13,12 @@ interface UsdtToIrtPriceData {
   error: Error | null | unknown;
 }
 
-export const useUsdtToIrtPrice = (): UsdtToIrtPriceData => {
-  const { data, isLoading, isError, error } = useQuery('marketStats', NobitexService.findUsdtTiRialPrice);
+const useUsdtToIrtPrice = (): UsdtToIrtPriceData => {
+  const { data, isLoading, isError, error } = useQuery(
+    'marketStats',
+    NobitexService.findUsdtTiRialPrice,
+  );
   return { data, isLoading, isError, error };
 };
+
+export default useUsdtToIrtPrice;

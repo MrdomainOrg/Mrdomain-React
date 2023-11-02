@@ -1,4 +1,8 @@
-import { type CryptoAccount, CryptoNetworkTypeId, CoinId } from './type/CryptoTypes';
+import {
+  type CryptoAccount,
+  CryptoNetworkTypeId,
+  CoinId,
+} from './type/CryptoTypes';
 
 const BTC: CryptoAccount[] = [
   {
@@ -8,7 +12,7 @@ const BTC: CryptoAccount[] = [
     cryptoAddress: '1PYRdJdCoxk3B5kd7gg2acTXRZ8ewtyRrR',
     isActive: true,
     isToken: false,
-    isMultiNetwork: true
+    isMultiNetwork: true,
   },
   {
     coinName: 'Bitcoin',
@@ -17,8 +21,8 @@ const BTC: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: false,
-    isMultiNetwork: true
-  }
+    isMultiNetwork: true,
+  },
 ];
 
 const ETH: CryptoAccount[] = [
@@ -29,7 +33,7 @@ const ETH: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: false,
-    isMultiNetwork: true
+    isMultiNetwork: true,
   },
   {
     coinName: 'Ethereum',
@@ -38,8 +42,8 @@ const ETH: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: false,
-    isMultiNetwork: true
-  }
+    isMultiNetwork: true,
+  },
 ];
 
 const usdtTrc20: CryptoAccount = {
@@ -49,7 +53,7 @@ const usdtTrc20: CryptoAccount = {
   cryptoAddress: 'THCxzRMvnwisHoAaphSxwcByNzNGaZAno5',
   isActive: true,
   isToken: true,
-  isMultiNetwork: true
+  isMultiNetwork: true,
 };
 
 const usdtPolygon: CryptoAccount = {
@@ -59,7 +63,7 @@ const usdtPolygon: CryptoAccount = {
   cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
   isActive: true,
   isToken: true,
-  isMultiNetwork: true
+  isMultiNetwork: true,
 };
 
 const usdtErc20: CryptoAccount = {
@@ -69,7 +73,7 @@ const usdtErc20: CryptoAccount = {
   cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
   isActive: true,
   isToken: true,
-  isMultiNetwork: true
+  isMultiNetwork: true,
 };
 
 const usdtBep20: CryptoAccount = {
@@ -79,15 +83,10 @@ const usdtBep20: CryptoAccount = {
   cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
   isActive: true,
   isToken: true,
-  isMultiNetwork: true
+  isMultiNetwork: true,
 };
 
-const USDT: CryptoAccount[] = [
-  usdtTrc20,
-  usdtPolygon,
-  usdtErc20,
-  usdtBep20
-];
+const USDT: CryptoAccount[] = [usdtTrc20, usdtPolygon, usdtErc20, usdtBep20];
 
 const USDC: CryptoAccount[] = [
   {
@@ -97,7 +96,7 @@ const USDC: CryptoAccount[] = [
     cryptoAddress: 'THCxzRMvnwisHoAaphSxwcByNzNGaZAno5',
     isActive: true,
     isToken: true,
-    isMultiNetwork: true
+    isMultiNetwork: true,
   },
   {
     coinName: 'USD Coin',
@@ -106,7 +105,7 @@ const USDC: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: true,
-    isMultiNetwork: true
+    isMultiNetwork: true,
   },
   {
     coinName: 'USD Coin',
@@ -115,8 +114,8 @@ const USDC: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: true,
-    isMultiNetwork: true
-  }
+    isMultiNetwork: true,
+  },
 ];
 
 const DAI: CryptoAccount[] = [
@@ -127,7 +126,7 @@ const DAI: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: true,
-    isMultiNetwork: true
+    isMultiNetwork: true,
   },
   {
     coinName: 'Dai',
@@ -136,7 +135,7 @@ const DAI: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: true,
-    isMultiNetwork: true
+    isMultiNetwork: true,
   },
   {
     coinName: 'Dai',
@@ -145,8 +144,8 @@ const DAI: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: true,
-    isMultiNetwork: true
-  }
+    isMultiNetwork: true,
+  },
 ];
 
 const BNB: CryptoAccount[] = [
@@ -157,7 +156,7 @@ const BNB: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: false,
-    isMultiNetwork: true
+    isMultiNetwork: true,
   },
   {
     coinName: 'Binance coin',
@@ -166,8 +165,8 @@ const BNB: CryptoAccount[] = [
     cryptoAddress: 'bnb137cxdlxc8ch4mezf0tjk4lwe8vlfqtgjvwv4sr',
     isActive: true,
     isToken: false,
-    isMultiNetwork: true
-  }
+    isMultiNetwork: true,
+  },
 ];
 
 const MATIC: CryptoAccount[] = [
@@ -178,7 +177,7 @@ const MATIC: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: false,
-    isMultiNetwork: true
+    isMultiNetwork: true,
   },
   {
     coinName: 'Matic',
@@ -187,8 +186,8 @@ const MATIC: CryptoAccount[] = [
     cryptoAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
     isActive: true,
     isToken: false,
-    isMultiNetwork: true
-  }
+    isMultiNetwork: true,
+  },
 ];
 
 const DOGE: CryptoAccount[] = [
@@ -199,8 +198,8 @@ const DOGE: CryptoAccount[] = [
     cryptoAddress: 'DHoS7ji9oMCDkS4i7e5XAXurQzwyi7zGjM',
     isActive: true,
     isToken: false,
-    isMultiNetwork: false
-  }
+    isMultiNetwork: false,
+  },
 ];
 
 const LTC: CryptoAccount[] = [
@@ -211,8 +210,8 @@ const LTC: CryptoAccount[] = [
     cryptoAddress: 'Lha38p2oA2Z4kd6XZHzESjWq3YANYHB4gw',
     isActive: true,
     isToken: false,
-    isMultiNetwork: false
-  }
+    isMultiNetwork: false,
+  },
 ];
 
 const ADA: CryptoAccount[] = [
@@ -220,11 +219,12 @@ const ADA: CryptoAccount[] = [
     coinName: 'Cardano',
     symbol: 'ADA',
     cryptoNetwork: CryptoNetworkTypeId.ADA,
-    cryptoAddress: 'addr1qyqjrzft999zudyzvsums80f28sm9svadyklmv6se6kh8zrjm67nslkjnz2zguz5rt8eththp7qqf8yw23xls4uj26ys8ljatn',
+    cryptoAddress:
+      'addr1qyqjrzft999zudyzvsums80f28sm9svadyklmv6se6kh8zrjm67nslkjnz2zguz5rt8eththp7qqf8yw23xls4uj26ys8ljatn',
     isActive: true,
     isToken: false,
-    isMultiNetwork: true
-  }
+    isMultiNetwork: true,
+  },
 ];
 
 const TRX: CryptoAccount[] = [
@@ -235,8 +235,8 @@ const TRX: CryptoAccount[] = [
     cryptoAddress: 'THCxzRMvnwisHoAaphSxwcByNzNGaZAno5',
     isActive: true,
     isToken: false,
-    isMultiNetwork: true
-  }
+    isMultiNetwork: true,
+  },
 ];
 
 const XRP: CryptoAccount[] = [
@@ -247,8 +247,8 @@ const XRP: CryptoAccount[] = [
     cryptoAddress: 'rDV4ag5zS8vp2DrtMPSGL3Qg35GCHxABj9',
     isActive: true,
     isToken: false,
-    isMultiNetwork: false
-  }
+    isMultiNetwork: false,
+  },
 ];
 
 const XMR: CryptoAccount[] = [
@@ -256,14 +256,15 @@ const XMR: CryptoAccount[] = [
     coinName: 'Ripple',
     symbol: 'XMR',
     cryptoNetwork: CryptoNetworkTypeId.XMR,
-    cryptoAddress: '48UKULcfQ6G15TYZfDngKQY19zctnruiLjRPYoCiTWhkQr975PansxJDmBEzhGum5TGFRyViGEKE5VNGfK68tBGgUz4npHV',
+    cryptoAddress:
+      '48UKULcfQ6G15TYZfDngKQY19zctnruiLjRPYoCiTWhkQr975PansxJDmBEzhGum5TGFRyViGEKE5VNGfK68tBGgUz4npHV',
     isActive: true,
     isToken: false,
-    isMultiNetwork: false
-  }
+    isMultiNetwork: false,
+  },
 ];
 
-export const ArashCryptoWallets = {
+const ArashCryptoWallets = {
   [CoinId.BTC]: BTC,
   [CoinId.ETH]: ETH,
   [CoinId.MATIC]: MATIC,
@@ -276,5 +277,7 @@ export const ArashCryptoWallets = {
   [CoinId.USDC]: USDC,
   [CoinId.USDT]: USDT,
   [CoinId.XMR]: XMR,
-  [CoinId.XRP]: XRP
+  [CoinId.XRP]: XRP,
 } satisfies Record<CoinId, CryptoAccount[]>;
+
+export default ArashCryptoWallets;

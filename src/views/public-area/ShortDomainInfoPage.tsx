@@ -89,3 +89,5 @@ const ShortDomainInfoPage = (): JSX.Element => {
     </div>
   );
 };
+
+export default ShortDomainInfoPage;
