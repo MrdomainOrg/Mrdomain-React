@@ -38,7 +38,7 @@ const FullDomainInfoPage = (): JSX.Element => {
       fetchData();
     }
     // console.log('USDT Price is : ', dayHighAsNumber);
-  }, []);
+  }, [usdtPrice.isSet]);
 
   useEffect(() => {
     const fetchDomainDetails = async () => {
@@ -60,7 +60,7 @@ const FullDomainInfoPage = (): JSX.Element => {
       fetchDomainDetails();
     }
     // console.log('USDT Price is : ', dayHighAsNumber);
-  }, []);
+  }, [domainDetails.isSet]);
   return (
     <div className="main">
       <section className="feature-section ptb-100">
