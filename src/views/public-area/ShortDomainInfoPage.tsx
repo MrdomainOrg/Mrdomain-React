@@ -39,6 +39,12 @@ const ShortDomainInfoPage = (): JSX.Element => {
         console.error('Error fetching data:', error);
       }
     };
+    if (!usdtPrice.isSet) {
+      fetchUsdtPriceData();
+    }
+    // console.log('USDT Price is : ', dayHighAsNumber);
+  }, []);
+  useEffect(() => {
     const fetchDomainDetails = async () => {
       try {
         const response =
@@ -54,9 +60,6 @@ const ShortDomainInfoPage = (): JSX.Element => {
         console.error('Error fetching data:', error);
       }
     };
-    if (!usdtPrice.isSet) {
-      fetchUsdtPriceData();
-    }
     if (!domainDetails.isSet) {
       fetchDomainDetails();
     }

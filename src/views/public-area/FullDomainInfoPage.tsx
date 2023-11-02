@@ -34,6 +34,13 @@ const FullDomainInfoPage = (): JSX.Element => {
         console.error('Error fetching data:', error);
       }
     };
+    if (!usdtPrice.isSet) {
+      fetchData();
+    }
+    // console.log('USDT Price is : ', dayHighAsNumber);
+  }, []);
+
+  useEffect(() => {
     const fetchDomainDetails = async () => {
       try {
         const response =
@@ -49,9 +56,6 @@ const FullDomainInfoPage = (): JSX.Element => {
         console.error('Error fetching data:', error);
       }
     };
-    if (!usdtPrice.isSet) {
-      fetchData();
-    }
     if (!domainDetails.isSet) {
       fetchDomainDetails();
     }
