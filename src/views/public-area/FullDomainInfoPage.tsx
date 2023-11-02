@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useQuery } from 'react-query';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setUsdtPrice } from '../../redux/usdtPriceSlice';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
@@ -101,7 +100,7 @@ const FullDomainInfoPage = (): JSX.Element => {
                   <h5>
                     {formatNumberWithCommas(
                       priceConfig.minimumDomainPriceInUsd,
-                    )}{' '}
+                    )}
                     (تتر / دلار)
                   </h5>
                 </div>
@@ -114,7 +113,7 @@ const FullDomainInfoPage = (): JSX.Element => {
                   <h5>
                     {formatNumberWithCommas(
                       priceConfig.minimumDomainPriceInUsd * usdtPrice.price,
-                    )}{' '}
+                    )}
                     تومان
                   </h5>
                 </div>
@@ -128,12 +127,11 @@ const FullDomainInfoPage = (): JSX.Element => {
                     لطفا دقت فرمایید حداقل قیمت دامنه های این شرکت از{' '}
                     {formatNumberWithCommas(
                       priceConfig.minimumDomainPriceInUsd,
-                    )}{' '}
+                    )}
                     دلار آمریکا (USD) معادل{' '}
                     {formatNumberWithCommas(
-                      priceConfig.minimumDomainPriceInUsd *
-                        priceConfig.usdInTomanMinimum,
-                    )}{' '}
+                      priceConfig.minimumDomainPriceInUsd * usdtPrice.price,
+                    )}
                     تومان به بالا می باشد لطفا تحت هیچ شرایطی برای قیمتهای کمتر
                     از تماس گرفتن جدا خود داری فرمایید
                   </h5>

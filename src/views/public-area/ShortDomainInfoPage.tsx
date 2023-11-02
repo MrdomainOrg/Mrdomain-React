@@ -1,7 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import { parseDomain } from '../../utils/domainUtil';
 import { priceConfig } from '../../constants/SiteConfigs';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
+import NobitexService from '../../modules/cryptoCurrency/services/NobitexService';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { setUsdtPrice } from '../../redux/usdtPriceSlice';
 
 const ShortDomainInfoPage = (): JSX.Element => {
   const { domain } = useParams();
@@ -11,6 +15,32 @@ const ShortDomainInfoPage = (): JSX.Element => {
   const minDomainPriceInUsdInPersian = formatNumberWithCommas(
     priceConfig.minimumDomainPriceInUsd,
   );
+  const usdtPrice = useAppSelector((state) => state.usdtPrice);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await NobitexService.findUsdtTiRialPrice();
+        const data = response;
+        const dayHigh = data?.stats['usdt-rls']?.dayHigh;
+        const dayHighAsNumber =
+          dayHigh !== null && dayHigh !== undefined
+            ? parseFloat(dayHigh) / 10
+            : 0;
+        if (dayHighAsNumber > priceConfig.usdInTomanMinimum) {
+          // setUsdtPrice(dayHighAsNumber);
+          dispatch(setUsdtPrice(dayHighAsNumber));
+        }
+        // console.log('USDT Price is : ', dayHighAsNumber);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    if (!usdtPrice.isSet) {
+      fetchData();
+    }
+    // console.log('USDT Price is : ', dayHighAsNumber);
+  }, []);
   return (
     <div className="main">
       <section className="feature-section ptb-100">
