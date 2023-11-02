@@ -100,7 +100,7 @@ const FullDomainInfoPage = (): JSX.Element => {
                   <h5>
                     {formatNumberWithCommas(
                       priceConfig.minimumDomainPriceInUsd,
-                    )}
+                    )}{' '}
                     (تتر / دلار)
                   </h5>
                 </div>
@@ -113,7 +113,7 @@ const FullDomainInfoPage = (): JSX.Element => {
                   <h5>
                     {formatNumberWithCommas(
                       priceConfig.minimumDomainPriceInUsd * usdtPrice.price,
-                    )}
+                    )}{' '}
                     تومان
                   </h5>
                 </div>
@@ -127,11 +127,11 @@ const FullDomainInfoPage = (): JSX.Element => {
                     لطفا دقت فرمایید حداقل قیمت دامنه های این شرکت از{' '}
                     {formatNumberWithCommas(
                       priceConfig.minimumDomainPriceInUsd,
-                    )}
+                    )}{' '}
                     دلار آمریکا (USD) معادل{' '}
                     {formatNumberWithCommas(
                       priceConfig.minimumDomainPriceInUsd * usdtPrice.price,
-                    )}
+                    )}{' '}
                     تومان به بالا می باشد لطفا تحت هیچ شرایطی برای قیمتهای کمتر
                     از تماس گرفتن جدا خود داری فرمایید
                   </h5>
