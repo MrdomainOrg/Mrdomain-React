@@ -1,6 +1,5 @@
-export const CompanyCryptoWallet = (): JSX.Element => {
-    return (
-        <>
-        </>
-    );
+const CompanyCryptoWallet = (): JSX.Element => {
+  return <></>;
 };
+
+export default CompanyCryptoWallet;

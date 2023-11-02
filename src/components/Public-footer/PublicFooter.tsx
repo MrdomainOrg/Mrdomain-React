@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { siteConfig } from '../../constants/SiteConfigs';
-export const PublicFooter = (): JSX.Element => {
-    /* eslint-disable */
+
+const PublicFooter = (): JSX.Element => {
+  /* eslint-disable */
     return (
         <footer className="footer-section">
             <div className="footer-top gradient-bg">
@@ -106,3 +107,5 @@ export const PublicFooter = (): JSX.Element => {
     );
     /* eslint-enable */
 };
+
+export default PublicFooter;

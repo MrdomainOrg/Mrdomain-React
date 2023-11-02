@@ -1,3 +1,3 @@
-export { DomesticBankAccount } from './domesticBankAccount';
+export * from './domesticBankAccount';
 export { BankId, baseImageBankUrl } from './constants';
-export { ArashDomesticBankAccounts } from './arashAccount';
+export * from './arashAccount';

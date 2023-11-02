@@ -13,12 +13,12 @@ import './custom.css';
 //  import { PublicPageLoader } from '../../components/PublicPageLoader/PublicPageLoader';
 //  import { PublicNavMenu } from '../../components/Public-nav-menu/PublicNavMenu';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { PublicHome as Home } from '../../pages/Public-Area/PublicHome';
+import PublicHome from '../../pages/Public-Area/PublicHome';
 import { CompanyBankAccounts } from '../../pages/Public-Area/CompanyBankAccounts';
-import { CompanyCryptoWallet } from '../../pages/Public-Area/CompanyCryptoWallet';
-import { PublicHeader } from '../../components/Public-header/PublicHeader';
-import { ContactUs } from '../../pages/Public-Area/ContactUs';
-import { PublicFooter } from '../../components/Public-footer/PublicFooter';
+import CompanyCryptoWallet from '../../pages/Public-Area/CompanyCryptoWallet';
+import PublicHeader from '../../components/Public-header/PublicHeader';
+import ContactUs from '../../pages/Public-Area/ContactUs';
+import PublicFooter from '../../components/Public-footer/PublicFooter';
 import ShortDomainInfoPage from './ShortDomainInfoPage';
 import FullDomainInfoPage from './FullDomainInfoPage';
 // import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -36,7 +36,7 @@ const PublicArea = (): JSX.Element => {
         <Router>
           <PublicHeader />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<PublicHome />} />
             <Route
               path="/companyBankAccounts"
               element={<CompanyBankAccounts />}

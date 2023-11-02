@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
 import { priceConfig, userDetails } from '../../constants/SiteConfigs';
-import { doesStringHasValue } from '../../utils/stringUtil';
+import doesStringHasValue from '../../utils/stringUtil/StringUtil';
 import useUsdtToIrtPrice from '../../modules/cryptoCurrency/hook/useUsdtToIrtPrice';
 
 const FullDomainInfoPage = (): JSX.Element => {
