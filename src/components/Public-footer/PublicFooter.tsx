@@ -78,8 +78,8 @@ const PublicFooter = (): JSX.Element => {
                     <div className="row align-items-center justify-content-between">
                         <div className="col-md-5 col-lg-5">
                             <p className="copyright-text pb-0 mb-0">
-                                کپی رایت © 1400. همه حقوق محفوظ است <a
-                                    href={ siteConfig.siteDomain }>آقای دامنه</a>
+                                کپی رایت © 1400. همه حقوق برای <a
+                                    href={ siteConfig.siteDomain }>آقای دامنه</a> محفوظ است 
                             </p>
                         </div>
                         <div className="col-md-7 col-lg-6">

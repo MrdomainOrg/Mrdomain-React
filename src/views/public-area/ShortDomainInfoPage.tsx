@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Button, Container } from 'react-bootstrap';
 import { parseDomain } from '../../utils/domainUtil';
 import { priceConfig } from '../../constants/SiteConfigs';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
@@ -8,6 +9,7 @@ import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setUsdtPrice } from '../../redux/usdtPriceSlice';
 import { setDomainDetails } from '../../redux/domainDetailsSlice';
 import OldMrdomainPublicService from '../../modules/domainDetail/services/OldMrdomainPublicService';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ShortDomainInfoPage = (): JSX.Element => {
   const { domain } = useParams();
@@ -68,7 +70,7 @@ const ShortDomainInfoPage = (): JSX.Element => {
   return (
     <div className="main">
       <section className="feature-section ptb-100">
-        <div className="container">
+        <Container>
           <div className="row align-items-center">
             <div className="col-md-12 col-lg-12">
               <div className="cta-new-wrap">
@@ -109,36 +111,50 @@ const ShortDomainInfoPage = (): JSX.Element => {
                   اجتماعی خودداری فرمایید
                 </p>
                 <div className="action-btns mt-5">
-                  <Link
-                    className="btn primary-solid-btn animated-btn mr-lg-3"
-                    to={domainLink}
-                  >
-                    مشاهده قیمت دامنه
-                  </Link>
-                  &nbsp;&nbsp;
-                  <Link
-                    className="btn primary-solid-btn animated-btn mr-lg-3"
-                    to={domainLink}
-                  >
-                    اطلاعات بیشتر دامنه
-                  </Link>
-                  <Link
-                    className="btn primary-solid-btn animated-btn mr-lg-3"
-                    to={domainLink}
-                  >
-                    اطلاعات تماس
-                  </Link>
-                  <Link
-                    className="btn primary-solid-btn animated-btn mr-lg-3"
-                    to={domainLink}
-                  >
-                    خرید دامنه
-                  </Link>
+                  <Button variant="primary">
+                    <Link
+                      className="btn primary-solid-btn animated-btn mr-lg-3"
+                      style={{ color: '#FFF' }}
+                      to={domainLink}
+                    >
+                      مشاهده قیمت دامنه
+                    </Link>
+                  </Button>
+                  {'  '}
+                  <Button variant="primary">
+                    <Link
+                      className="btn primary-solid-btn animated-btn mr-lg-3"
+                      to={domainLink}
+                      style={{ color: '#FFF' }}
+                    >
+                      اطلاعات بیشتر دامنه
+                    </Link>
+                  </Button>
+                  {'  '}
+                  <Button variant="primary">
+                    <Link
+                      className="btn primary-solid-btn animated-btn mr-lg-3"
+                      style={{ color: '#FFF' }}
+                      to={domainLink}
+                    >
+                      اطلاعات تماس
+                    </Link>
+                  </Button>
+                  {'  '}
+                  <Button variant="primary">
+                    <Link
+                      className="btn primary-solid-btn animated-btn mr-lg-3"
+                      style={{ color: '#FFF' }}
+                      to={domainLink}
+                    >
+                      خرید دامنه
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </div>
   );
