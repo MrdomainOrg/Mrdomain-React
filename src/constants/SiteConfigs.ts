@@ -22,3 +22,9 @@ export const userDetails = {
   phone3: '',
   phone4: '',
 };
+
+export const cryptoDetails = {
+  ethWalletAddress: '0x06aD7D3FB4de5302f7659aB9455541D3c88786A2',
+  trxWalletAddress: 'THCxzRMvnwisHoAaphSxwcByNzNGaZAno5',
+  btcWalletAddress: '1PYRdJdCoxk3B5kd7gg2acTXRZ8ewtyRrR',
+};
