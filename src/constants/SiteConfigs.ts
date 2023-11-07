@@ -5,6 +5,7 @@ export const siteConfig = {
     'ایران - تهران - خیابان آیت الله کاشانی نبش خیابان دانشور برج دیپلمات',
   companyPhone: '021 9101 4745',
   siteEmail: 'info@mrdomain.ir',
+  fetchDomainPriceFromApi: false,
 };
 
 export const priceConfig = {
@@ -14,7 +15,7 @@ export const priceConfig = {
 
 export const userDetails = {
   mobile1: '0920 383 5166',
-  mobile2: '0910 99 88 777',
+  mobile2: '0935 387 5166',
   mobile3: '',
   mobile4: '',
   phone1: '021 9101 4745',

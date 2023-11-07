@@ -4,7 +4,11 @@ import { Row, Container } from 'react-bootstrap';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setUsdtPrice } from '../../redux/usdtPriceSlice';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
-import { priceConfig, userDetails } from '../../constants/SiteConfigs';
+import {
+  priceConfig,
+  siteConfig,
+  userDetails,
+} from '../../constants/SiteConfigs';
 import doesStringHasValue from '../../utils/stringUtil/StringUtil';
 import NobitexService from '../../modules/cryptoCurrency/services/NobitexService';
 import { setDomainDetails } from '../../redux/domainDetailsSlice';
@@ -58,7 +62,7 @@ const FullDomainInfoPage = (): JSX.Element => {
         console.error('Error fetching data:', error);
       }
     };
-    if (!domainDetails.isSet) {
+    if (!domainDetails.isSet && siteConfig.fetchDomainPriceFromApi) {
       fetchDomainDetails();
     }
     // console.log('USDT Price is : ', dayHighAsNumber);

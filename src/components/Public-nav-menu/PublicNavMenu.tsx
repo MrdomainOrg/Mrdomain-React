@@ -16,15 +16,10 @@ import { useState } from 'react';
 
 // import { Link, useNavigate } from 'react-router-dom';
 const PublicNavMenu = (): JSX.Element => {
-  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-
-  const handleNavbarOpen = () => {
-    setIsNavbarOpen(true);
-  };
-
-  const handleNavbarClose = () => {
-    setIsNavbarOpen(false);
-  };
+  const [isHoveredFinanceDetails, setIsHoveredFinanceDetails] = useState(false);
+  const [isClickedFinanceDetails, setIsClickedFinanceDetails] = useState(false);
+  const [isHoveredCrmMenu, setIsHoveredCrmMenu] = useState(false);
+  const [isClickedCrmMenu, setIsClickedCrmMenu] = useState(false);
   // const { t, i18n } = useTranslation()
   // let navigate = useNavigate()
   function onClick(event: React.MouseEvent<HTMLAnchorElement>): void {
@@ -33,9 +28,7 @@ const PublicNavMenu = (): JSX.Element => {
   return (
     <Navbar
       expand="lg"
-      className={`main-header-menu-wrap white-bg border-bottom ${
-        isNavbarOpen ? 'navbar-open' : ''
-      }`}
+      className="main-header-menu-wrap white-bg border-bottom navbar-open"
       id="logoAndNav"
     >
       <Container className="container">
@@ -60,11 +53,7 @@ const PublicNavMenu = (): JSX.Element => {
             </span>
           </Button>
         </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="navBar"
-          onMouseEnter={handleNavbarOpen}
-          onMouseLeave={handleNavbarClose}
-        >
+        <Navbar.Toggle aria-controls="navBar">
           <span id="hamburgerTrigger">
             <span className="fas fa-bars" />
           </span>
@@ -82,6 +71,10 @@ const PublicNavMenu = (): JSX.Element => {
               title="پرتال مشتریان"
               id="basic-nav-dropdown"
               className="collapse navbar-collapse custom-nav-item nav-item"
+              onMouseEnter={() => setIsHoveredCrmMenu(true)}
+              onMouseLeave={() => setIsHoveredCrmMenu(false)}
+              onToggle={() => setIsClickedCrmMenu(!isClickedCrmMenu)}
+              show={isClickedCrmMenu || isHoveredCrmMenu}
             >
               <NavDropdown.Item
                 href="https://crm.mrdomain.ir/register.php"
@@ -108,6 +101,12 @@ const PublicNavMenu = (): JSX.Element => {
               className="nav-item hs-has-mega-menu custom-nav-item"
               data-max-width="720px"
               data-position="right"
+              onMouseEnter={() => setIsHoveredFinanceDetails(true)}
+              onMouseLeave={() => setIsHoveredFinanceDetails(false)}
+              onToggle={() =>
+                setIsClickedFinanceDetails(!isClickedFinanceDetails)
+              }
+              show={isClickedFinanceDetails || isHoveredFinanceDetails}
             >
               <Nav.Link
                 as={Link}

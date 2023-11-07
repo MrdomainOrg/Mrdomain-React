@@ -85,6 +85,7 @@ export enum CoinId {
   DAI,
   USDC,
   USDT,
+  BUSD,
   XMR,
   XRP,
 }

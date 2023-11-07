@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { parseDomain } from '../../utils/domainUtil';
-import { priceConfig } from '../../constants/SiteConfigs';
+import { priceConfig, siteConfig } from '../../constants/SiteConfigs';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
 import NobitexService from '../../modules/cryptoCurrency/services/NobitexService';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
@@ -62,7 +62,7 @@ const ShortDomainInfoPage = (): JSX.Element => {
         console.error('Error fetching data:', error);
       }
     };
-    if (!domainDetails.isSet) {
+    if (!domainDetails.isSet && siteConfig.fetchDomainPriceFromApi) {
       fetchDomainDetails();
     }
     // console.log('USDT Price is : ', dayHighAsNumber);

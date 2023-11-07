@@ -149,6 +149,27 @@ const DAI: CryptoAccount[] = [
   },
 ];
 
+const BUSD: CryptoAccount[] = [
+  {
+    coinName: 'Binance USD',
+    symbol: 'BUSD',
+    cryptoNetwork: CryptoNetworkTypeId.ETH,
+    cryptoAddress: cryptoDetails.ethWalletAddress,
+    isActive: true,
+    isToken: true,
+    isMultiNetwork: true,
+  },
+  {
+    coinName: 'Binance USD',
+    symbol: 'BUSD',
+    cryptoNetwork: CryptoNetworkTypeId.BSC,
+    cryptoAddress: cryptoDetails.ethWalletAddress,
+    isActive: true,
+    isToken: true,
+    isMultiNetwork: true,
+  },
+];
+
 const BNB: CryptoAccount[] = [
   {
     coinName: 'Binance coin',
@@ -279,6 +300,7 @@ const ArashCryptoWallets = {
   [CoinId.USDT]: USDT,
   [CoinId.XMR]: XMR,
   [CoinId.XRP]: XRP,
+  [CoinId.BUSD]: BUSD,
 } satisfies Record<CoinId, CryptoAccount[]>;
 
 export default ArashCryptoWallets;
