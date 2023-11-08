@@ -21,6 +21,7 @@ import ContactUs from '../../pages/Public-Area/ContactUs';
 import PublicFooter from '../../components/Public-footer/PublicFooter';
 import ShortDomainInfoPage from './ShortDomainInfoPage';
 import FullDomainInfoPage from './FullDomainInfoPage';
+import PayByCrypto from '../../pages/Public-Area/PayByCrypto';
 // import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 //  const publicAreaPath = process.env.PUBLIC_URL;
@@ -54,6 +55,7 @@ const PublicArea = (): JSX.Element => {
               path="/showdomaindetail/-/mrdomainRoute/domainInfo/:tldPart/:domainPart"
               element={<FullDomainInfoPage />}
             />
+            <Route path="/payByCrypto" element={<PayByCrypto />} />
           </Routes>
           <PublicFooter />
         </Router>

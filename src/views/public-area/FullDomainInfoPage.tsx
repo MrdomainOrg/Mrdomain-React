@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Row, Container } from 'react-bootstrap';
+import Button from '@mui/material/Button';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setUsdtPrice } from '../../redux/usdtPriceSlice';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
@@ -126,24 +127,34 @@ const FullDomainInfoPage = (): JSX.Element => {
                 <div className="col-3">
                   <h5>قیمت به دلار :</h5>
                 </div>
-                <div className="col-9">
+                <div className="col-3">
                   <h5>
                     {formatNumberWithCommas(domainDetails.domainPriceInUSD)}{' '}
                     (تتر / دلار)
                   </h5>
+                </div>
+                <div className="col-3">
+                  <Button variant="outlined">
+                    <Link to="/payByCrypto">پرداخت با ارز دیجیتال</Link>
+                  </Button>
                 </div>
               </Row>
               <Row>
                 <div className="col-3">
                   <h5>قیمت لحظه ای به تومان :</h5>
                 </div>
-                <div className="col-9">
+                <div className="col-3">
                   <h5>
                     {formatNumberWithCommas(
                       domainDetails.domainPriceInUSD * usdtPrice.price,
                     )}{' '}
                     تومان
                   </h5>
+                </div>
+                <div className="col-3">
+                  <Button variant="outlined">
+                    <Link to="/companyBankAccounts">پرداخت ریالی</Link>
+                  </Button>
                 </div>
               </Row>
               {domainDetails.domainPriceInUSD ===
