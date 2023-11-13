@@ -90,6 +90,19 @@ export enum CoinId {
   XRP,
 }
 
+export interface CryptoCoin {
+  coinISO: string;
+  coinName: string;
+  persianName: string;
+  iamgeUrl: string;
+  isActive: boolean;
+  isToken: boolean;
+  isMultiNetwork: boolean;
+  isStableCoin: boolean;
+  nobitexTicker?: string;
+  nobitexApiUrl?: string;
+}
+
 export interface CryptoAccount {
   coinName: string;
   symbol: string;
