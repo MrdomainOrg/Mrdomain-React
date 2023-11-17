@@ -1,306 +1,259 @@
 import { cryptoDetails } from '../../constants/SiteConfigs';
 import {
-  type CryptoAccount,
-  CryptoNetworkTypeId,
-  CoinId,
-} from './type/CryptoTypes';
+  ADACoin,
+  BNBCoin,
+  BTCCoin,
+  BUSDCoin,
+  DAICoin,
+  DOGECoin,
+  ETHCoin,
+  LTCCoin,
+  MATICCoin,
+  TRXCoin,
+  USDCCoin,
+  USDTCoin,
+  XMRCoin,
+  XRPCoin,
+} from './coin/CryptoCoin';
+import { CryptoAccount } from './type/CryptoAccount';
+import { CryptoNetworkTypeId, CoinId } from './type/CryptoTypes';
+import {
+  BTCNetwork,
+  ETHNetwork,
+  ADANetwork,
+  BCNetwork,
+  BSCNetwork,
+  DOGENetwork,
+  LTCNetwork,
+  TRONNetwork,
+  XMRNetwork,
+  XRPNetwork,
+  PolygonNetwork,
+} from './type/CryptoNetwork';
 
-const BTC: CryptoAccount[] = [
+const BTCWallet: CryptoAccount[] = [
   {
-    coinName: 'Bitcoin',
-    symbol: 'BTC',
-    cryptoNetwork: CryptoNetworkTypeId.BTC,
-    cryptoAddress: cryptoDetails.btcWalletAddress,
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: true,
+    cryptoCoin: BTCCoin,
+    cryptoNetwork: BTCNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.btcWalletAddress,
   },
   {
-    coinName: 'Bitcoin',
-    symbol: 'BTC',
-    cryptoNetwork: CryptoNetworkTypeId.BSC,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: true,
+    cryptoCoin: BTCCoin,
+    cryptoNetwork: BSCNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
 ];
 
-const ETH: CryptoAccount[] = [
+const ETHWallet: CryptoAccount[] = [
   {
-    coinName: 'Ethereum',
-    symbol: 'ETH',
-    cryptoNetwork: CryptoNetworkTypeId.ETH,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: true,
+    cryptoCoin: ETHCoin,
+    cryptoNetwork: ETHNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
   {
-    coinName: 'Ethereum',
-    symbol: 'ETH',
-    cryptoNetwork: CryptoNetworkTypeId.BSC,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: true,
+    cryptoCoin: ETHCoin,
+    cryptoNetwork: BSCNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
 ];
 
-const usdtTrc20: CryptoAccount = {
-  coinName: 'Tether',
-  symbol: 'USDT',
-  cryptoNetwork: CryptoNetworkTypeId.TRX,
-  cryptoAddress: cryptoDetails.trxWalletAddress,
-  isActive: true,
-  isToken: true,
-  isMultiNetwork: true,
+const usdtTrc20Wallet: CryptoAccount = {
+  cryptoCoin: USDTCoin,
+  cryptoNetwork: TRONNetwork,
+  enable: true,
+  walletAddress: cryptoDetails.trxWalletAddress,
 };
 
-const usdtPolygon: CryptoAccount = {
-  coinName: 'Tether',
-  symbol: 'USDT',
-  cryptoNetwork: CryptoNetworkTypeId.POLYGON,
-  cryptoAddress: cryptoDetails.ethWalletAddress,
-  isActive: true,
-  isToken: true,
-  isMultiNetwork: true,
+const usdtPolygonWallet: CryptoAccount = {
+  cryptoCoin: USDTCoin,
+  cryptoNetwork: PolygonNetwork,
+  enable: true,
+  walletAddress: cryptoDetails.ethWalletAddress,
 };
 
-const usdtErc20: CryptoAccount = {
-  coinName: 'Tether',
-  symbol: 'USDT',
-  cryptoNetwork: CryptoNetworkTypeId.ETH,
-  cryptoAddress: cryptoDetails.ethWalletAddress,
-  isActive: true,
-  isToken: true,
-  isMultiNetwork: true,
+const usdtErc20Wallet: CryptoAccount = {
+  cryptoCoin: USDTCoin,
+  cryptoNetwork: ETHNetwork,
+  enable: true,
+  walletAddress: cryptoDetails.ethWalletAddress,
 };
 
-const usdtBep20: CryptoAccount = {
-  coinName: 'Tether',
-  symbol: 'USDT',
-  cryptoNetwork: CryptoNetworkTypeId.BSC,
-  cryptoAddress: cryptoDetails.ethWalletAddress,
-  isActive: true,
-  isToken: true,
-  isMultiNetwork: true,
+const usdtBep20Wallet: CryptoAccount = {
+  cryptoCoin: USDTCoin,
+  cryptoNetwork: BSCNetwork,
+  enable: true,
+  walletAddress: cryptoDetails.ethWalletAddress,
 };
 
-const USDT: CryptoAccount[] = [usdtTrc20, usdtPolygon, usdtErc20, usdtBep20];
+const USDTWallet: CryptoAccount[] = [
+  usdtTrc20Wallet,
+  usdtPolygonWallet,
+  usdtErc20Wallet,
+  usdtBep20Wallet,
+];
 
-const USDC: CryptoAccount[] = [
+const USDCWallet: CryptoAccount[] = [
   {
-    coinName: 'USD Coin',
-    symbol: 'USDC',
-    cryptoNetwork: CryptoNetworkTypeId.TRX,
-    cryptoAddress: cryptoDetails.trxWalletAddress,
-    isActive: true,
-    isToken: true,
-    isMultiNetwork: true,
+    cryptoCoin: USDCCoin,
+    cryptoNetwork: TRONNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.trxWalletAddress,
   },
   {
-    coinName: 'USD Coin',
-    symbol: 'USDC',
-    cryptoNetwork: CryptoNetworkTypeId.ETH,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: true,
-    isMultiNetwork: true,
+    cryptoCoin: USDCCoin,
+    cryptoNetwork: ETHNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
   {
-    coinName: 'USD Coin',
-    symbol: 'USDC',
-    cryptoNetwork: CryptoNetworkTypeId.BSC,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: true,
-    isMultiNetwork: true,
+    cryptoCoin: USDCCoin,
+    cryptoNetwork: BSCNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
 ];
 
-const DAI: CryptoAccount[] = [
+const DAIWallet: CryptoAccount[] = [
   {
-    coinName: 'Dai',
-    symbol: 'DAI',
-    cryptoNetwork: CryptoNetworkTypeId.POLYGON,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: true,
-    isMultiNetwork: true,
+    cryptoCoin: DAICoin,
+    cryptoNetwork: PolygonNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
   {
-    coinName: 'Dai',
-    symbol: 'DAI',
-    cryptoNetwork: CryptoNetworkTypeId.ETH,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: true,
-    isMultiNetwork: true,
+    cryptoCoin: DAICoin,
+    cryptoNetwork: ETHNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
   {
-    coinName: 'Dai',
-    symbol: 'DAI',
-    cryptoNetwork: CryptoNetworkTypeId.BSC,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: true,
-    isMultiNetwork: true,
+    cryptoCoin: DAICoin,
+    cryptoNetwork: BSCNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
 ];
 
-const BUSD: CryptoAccount[] = [
+const BUSDWallet: CryptoAccount[] = [
   {
-    coinName: 'Binance USD',
-    symbol: 'BUSD',
-    cryptoNetwork: CryptoNetworkTypeId.ETH,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: true,
-    isMultiNetwork: true,
+    cryptoCoin: BUSDCoin,
+    cryptoNetwork: ETHNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
   {
-    coinName: 'Binance USD',
-    symbol: 'BUSD',
-    cryptoNetwork: CryptoNetworkTypeId.BSC,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: true,
-    isMultiNetwork: true,
+    cryptoCoin: BUSDCoin,
+    cryptoNetwork: BSCNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
 ];
 
-const BNB: CryptoAccount[] = [
+const BNBWallet: CryptoAccount[] = [
   {
-    coinName: 'Binance coin',
-    symbol: 'BNB',
-    cryptoNetwork: CryptoNetworkTypeId.BSC,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: true,
+    cryptoCoin: BNBCoin,
+    cryptoNetwork: BSCNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
   {
-    coinName: 'Binance coin',
-    symbol: 'BNB',
-    cryptoNetwork: CryptoNetworkTypeId.BNB,
-    cryptoAddress: 'bnb137cxdlxc8ch4mezf0tjk4lwe8vlfqtgjvwv4sr',
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: true,
+    cryptoCoin: BNBCoin,
+    cryptoNetwork: BCNetwork,
+    enable: true,
+    walletAddress: 'bnb137cxdlxc8ch4mezf0tjk4lwe8vlfqtgjvwv4sr',
   },
 ];
 
-const MATIC: CryptoAccount[] = [
+const MATICWallet: CryptoAccount[] = [
   {
-    coinName: 'Matic',
-    symbol: 'MATIC',
-    cryptoNetwork: CryptoNetworkTypeId.POLYGON,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: true,
+    cryptoCoin: MATICCoin,
+    cryptoNetwork: PolygonNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
   {
-    coinName: 'Matic',
-    symbol: 'MATIC',
-    cryptoNetwork: CryptoNetworkTypeId.ETH,
-    cryptoAddress: cryptoDetails.ethWalletAddress,
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: true,
+    cryptoCoin: MATICCoin,
+    cryptoNetwork: ETHNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.ethWalletAddress,
   },
 ];
 
-const DOGE: CryptoAccount[] = [
+const DOGEWallet: CryptoAccount[] = [
   {
-    coinName: 'Dogecoin',
-    symbol: 'DOGE',
-    cryptoNetwork: CryptoNetworkTypeId.DOGE,
-    cryptoAddress: 'DHoS7ji9oMCDkS4i7e5XAXurQzwyi7zGjM',
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: false,
+    cryptoCoin: DOGECoin,
+    cryptoNetwork: DOGENetwork,
+    enable: true,
+    walletAddress: 'DHoS7ji9oMCDkS4i7e5XAXurQzwyi7zGjM',
   },
 ];
 
-const LTC: CryptoAccount[] = [
+const LTCWallet: CryptoAccount[] = [
   {
-    coinName: 'Litecoin',
-    symbol: 'LTC',
-    cryptoNetwork: CryptoNetworkTypeId.LTC,
-    cryptoAddress: 'Lha38p2oA2Z4kd6XZHzESjWq3YANYHB4gw',
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: false,
+    cryptoCoin: LTCCoin,
+    cryptoNetwork: LTCNetwork,
+    enable: true,
+    walletAddress: 'Lha38p2oA2Z4kd6XZHzESjWq3YANYHB4gw',
   },
 ];
 
-const ADA: CryptoAccount[] = [
+const ADAWallet: CryptoAccount[] = [
   {
-    coinName: 'Cardano',
-    symbol: 'ADA',
-    cryptoNetwork: CryptoNetworkTypeId.ADA,
-    cryptoAddress:
+    cryptoCoin: ADACoin,
+    cryptoNetwork: ADANetwork,
+    enable: true,
+    walletAddress:
       'addr1qyqjrzft999zudyzvsums80f28sm9svadyklmv6se6kh8zrjm67nslkjnz2zguz5rt8eththp7qqf8yw23xls4uj26ys8ljatn',
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: true,
   },
 ];
 
-const TRX: CryptoAccount[] = [
+const TRXWallet: CryptoAccount[] = [
   {
-    coinName: 'Tron',
-    symbol: 'TRX',
-    cryptoNetwork: CryptoNetworkTypeId.TRX,
-    cryptoAddress: cryptoDetails.trxWalletAddress,
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: true,
+    cryptoCoin: TRXCoin,
+    cryptoNetwork: TRONNetwork,
+    enable: true,
+    walletAddress: cryptoDetails.trxWalletAddress,
   },
 ];
 
-const XRP: CryptoAccount[] = [
+const XRPWallet: CryptoAccount[] = [
   {
-    coinName: 'Ripple',
-    symbol: 'XRP',
-    cryptoNetwork: CryptoNetworkTypeId.XRP,
-    cryptoAddress: 'rDV4ag5zS8vp2DrtMPSGL3Qg35GCHxABj9',
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: false,
+    cryptoCoin: XRPCoin,
+    cryptoNetwork: XRPNetwork,
+    enable: true,
+    walletAddress: 'rDV4ag5zS8vp2DrtMPSGL3Qg35GCHxABj9',
   },
 ];
 
-const XMR: CryptoAccount[] = [
+const XMRWallet: CryptoAccount[] = [
   {
-    coinName: 'Ripple',
-    symbol: 'XMR',
-    cryptoNetwork: CryptoNetworkTypeId.XMR,
-    cryptoAddress:
+    cryptoCoin: XMRCoin,
+    cryptoNetwork: XMRNetwork,
+    enable: true,
+    walletAddress:
       '48UKULcfQ6G15TYZfDngKQY19zctnruiLjRPYoCiTWhkQr975PansxJDmBEzhGum5TGFRyViGEKE5VNGfK68tBGgUz4npHV',
-    isActive: true,
-    isToken: false,
-    isMultiNetwork: false,
   },
 ];
 
 const ArashCryptoWallets = {
-  [CoinId.BTC]: BTC,
-  [CoinId.ETH]: ETH,
-  [CoinId.MATIC]: MATIC,
-  [CoinId.TRX]: TRX,
-  [CoinId.ADA]: ADA,
-  [CoinId.LTC]: LTC,
-  [CoinId.DOGE]: DOGE,
-  [CoinId.BNB]: BNB,
-  [CoinId.DAI]: DAI,
-  [CoinId.USDC]: USDC,
-  [CoinId.USDT]: USDT,
-  [CoinId.XMR]: XMR,
-  [CoinId.XRP]: XRP,
-  [CoinId.BUSD]: BUSD,
+  [CoinId.BTC]: BTCWallet,
+  [CoinId.ETH]: ETHWallet,
+  [CoinId.MATIC]: MATICWallet,
+  [CoinId.TRX]: TRXWallet,
+  [CoinId.ADA]: ADAWallet,
+  [CoinId.LTC]: LTCWallet,
+  [CoinId.DOGE]: DOGEWallet,
+  [CoinId.BNB]: BNBWallet,
+  [CoinId.DAI]: DAIWallet,
+  [CoinId.USDC]: USDCWallet,
+  [CoinId.USDT]: USDTWallet,
+  [CoinId.XMR]: XMRWallet,
+  [CoinId.XRP]: XRPWallet,
+  [CoinId.BUSD]: BUSDWallet,
 } satisfies Record<CoinId, CryptoAccount[]>;
 
 export default ArashCryptoWallets;

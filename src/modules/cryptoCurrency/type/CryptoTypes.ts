@@ -29,8 +29,9 @@ export interface MarketData {
 
 export interface MarketStatsData {
   status: string;
-  stats: {
-    'usdt-rls': {
+  stats: Record<
+    string,
+    {
       isClosed: boolean;
       bestSell: string;
       bestBuy: string;
@@ -42,8 +43,22 @@ export interface MarketStatsData {
       dayOpen: string;
       dayClose: string;
       dayChange: string;
-    };
-  };
+    }
+  >;
+}
+
+export interface MarketStatsDataMap {
+  'usdt-rls': MarketStatsData;
+  'btc-rls': MarketStatsData;
+  'eth-rls': MarketStatsData;
+  'matic-rls': MarketStatsData;
+  'bnb-rls': MarketStatsData;
+  'ltc-rls': MarketStatsData;
+  'xmr-rls': MarketStatsData;
+  'xrp-rls': MarketStatsData;
+  'doge-rls': MarketStatsData;
+  'trx-rls': MarketStatsData;
+  'ada-rls': MarketStatsData;
 }
 
 export enum CryptoNetworkId {
@@ -74,20 +89,20 @@ export enum CryptoNetworkTypeId {
 }
 
 export enum CoinId {
-  BTC,
-  ETH,
-  MATIC,
-  TRX,
-  ADA,
-  LTC,
-  DOGE,
-  BNB,
-  DAI,
-  USDC,
-  USDT,
-  BUSD,
-  XMR,
-  XRP,
+  BTC = 'BTC',
+  ETH = 'ETH',
+  MATIC = 'MATIC',
+  TRX = 'Tron',
+  ADA = 'ADA',
+  LTC = 'LTC',
+  DOGE = 'DOGECOIN',
+  BNB = 'BNB',
+  DAI = 'DAI',
+  USDC = 'USDC',
+  USDT = 'USDT',
+  BUSD = 'BUSD',
+  XMR = 'XMR',
+  XRP = 'XRP',
 }
 
 export interface CryptoCoin {
@@ -103,7 +118,7 @@ export interface CryptoCoin {
   nobitexApiUrl?: string;
 }
 
-export interface CryptoAccount {
+export interface OldCryptoAccount {
   coinName: string;
   symbol: string;
   cryptoNetwork: CryptoNetworkTypeId;
