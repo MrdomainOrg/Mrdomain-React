@@ -25,7 +25,7 @@ const FullDomainInfoPage = (): JSX.Element => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await NobitexService.findUsdtTiRialPrice();
+        const response = await NobitexService.findUsdtToRialPrice();
         const data = response;
         const dayHigh = data?.stats['usdt-rls']?.dayHigh;
         const dayHighAsNumber =

@@ -16,7 +16,7 @@ export interface UsdtToIrtPriceData {
 const useUsdtToIrtPrice = (): UsdtToIrtPriceData => {
   const { data, isLoading, isError, error } = useQuery(
     'marketStats',
-    NobitexService.findUsdtTiRialPricePromise,
+    NobitexService.findUsdtToRialPricePromise,
   );
   return { data, isLoading, isError, error };
 };

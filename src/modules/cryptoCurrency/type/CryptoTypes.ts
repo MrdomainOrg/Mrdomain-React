@@ -33,16 +33,16 @@ export interface MarketStatsData {
     string,
     {
       isClosed: boolean;
-      bestSell: string;
-      bestBuy: string;
-      volumeSrc: string;
-      volumeDst: string;
-      latest: string;
-      dayLow: string;
-      dayHigh: string;
-      dayOpen: string;
-      dayClose: string;
-      dayChange: string;
+      bestSell: number;
+      bestBuy: number;
+      volumeSrc: number;
+      volumeDst: number;
+      latest: number;
+      dayLow: number;
+      dayHigh: number;
+      dayOpen: number;
+      dayClose: number;
+      dayChange: number;
     }
   >;
 }

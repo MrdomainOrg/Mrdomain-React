@@ -25,8 +25,9 @@ const ShortDomainInfoPage = (): JSX.Element => {
   useEffect(() => {
     const fetchUsdtPriceData = async () => {
       try {
-        const response = await NobitexService.findUsdtTiRialPrice();
+        const response = await NobitexService.findUsdtToRialPrice();
         const data = response;
+        console.log('data is : ', data);
         const dayHigh = data?.stats['usdt-rls']?.dayHigh;
         const dayHighAsNumber =
           dayHigh !== null && dayHigh !== undefined
