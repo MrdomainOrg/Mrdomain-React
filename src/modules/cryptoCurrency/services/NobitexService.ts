@@ -5,7 +5,10 @@ const apiClient = axios.create({
   baseURL: 'https://api.nobitex.ir',
   headers: {
     'Content-type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': '*',
   },
+  timeout: 60000,
 });
 
 const findUsdtTiRialPricePromise = async (): Promise<MarketStatsData> => {
