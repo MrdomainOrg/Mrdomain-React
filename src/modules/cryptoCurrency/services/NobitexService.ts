@@ -5,7 +5,7 @@ const apiClient = axios.create({
   baseURL: 'https://api.nobitex.ir',
   headers: {
     'Content-type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'nobitex.ir',
   },
   withCredentials: true,
   timeout: 60000,
