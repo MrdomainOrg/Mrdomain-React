@@ -3,13 +3,11 @@ import { type MarketStatsData } from '../type/CryptoTypes';
 
 const apiClient = axios.create({
   baseURL: 'https://api.nobitex.ir',
-  mode: 'no-cors',
   headers: {
     'Content-type': 'application/json',
     'Access-Control-Allow-Origin': '*',
   },
   withCredentials: true,
-  credentials: 'same-origin',
   timeout: 60000,
 });
 
