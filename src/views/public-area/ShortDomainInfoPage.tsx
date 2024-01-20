@@ -32,9 +32,9 @@ const ShortDomainInfoPage = (): JSX.Element => {
           dayHigh !== null && dayHigh !== undefined
             ? parseFloat(dayHigh) / 10
             : 0;
-        if (dayHighAsNumber > priceConfig.usdInTomanMinimum) {
+        if (dayHighAsNumber + 5000 > priceConfig.usdInTomanMinimum) {
           // setUsdtPrice(dayHighAsNumber);
-          dispatch(setUsdtPrice(dayHighAsNumber));
+          dispatch(setUsdtPrice(dayHighAsNumber + 5000));
         }
         // console.log('USDT Price is : ', dayHighAsNumber);
       } catch (error) {

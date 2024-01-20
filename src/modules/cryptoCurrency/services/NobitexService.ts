@@ -2,12 +2,10 @@ import axios from 'axios';
 import { type MarketStatsData } from '../type/CryptoTypes';
 
 const apiClient = axios.create({
-  baseURL: 'https://api.nobitex.ir',
+  baseURL: 'https://nobitex.mrdomain.ir',
   headers: {
     'Content-type': 'application/json',
-    'Access-Control-Allow-Origin': 'nobitex.ir',
   },
-  withCredentials: true,
   timeout: 60000,
 });
 
