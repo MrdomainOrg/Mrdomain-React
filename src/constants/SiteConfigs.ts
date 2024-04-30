@@ -10,7 +10,7 @@ export const siteConfig = {
 
 export const priceConfig = {
   minimumDomainPriceInUsd: 1000,
-  usdInTomanMinimum: 62500,
+  usdInTomanMinimum: 70000,
 };
 
 export const userDetails = {

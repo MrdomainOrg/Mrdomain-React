@@ -4,6 +4,7 @@ import { Row, Container } from 'react-bootstrap';
 import Button from '@mui/material/Button';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setUsdtPrice } from '../../redux/usdtPriceSlice';
+import { setMinPriceInUsdt } from '../../redux/minPriceInUsdtSlice';
 import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil';
 import {
   priceConfig,
@@ -18,6 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const FullDomainInfoPage = (): JSX.Element => {
   const usdtPrice = useAppSelector((state) => state.usdtPrice);
+  const minPriceInUsd = useAppSelector((state) => state.minPriceInUsdt);
   const domainDetails = useAppSelector((state) => state.domainDetails);
   const dispatch = useAppDispatch();
   const { domainPart, tldPart } = useParams();
@@ -28,13 +30,35 @@ const FullDomainInfoPage = (): JSX.Element => {
         const response = await NobitexService.findUsdtTiRialPrice();
         const data = response;
         const dayHigh = data?.stats['usdt-rls']?.dayHigh;
+        const dayLow = data?.stats['usdt-rls']?.dayLow;
         const dayHighAsNumber =
           dayHigh !== null && dayHigh !== undefined
             ? parseFloat(dayHigh) / 10
             : 0;
+        const dayLowAsNumber =
+          dayLow !== null && dayLow !== undefined ? parseFloat(dayLow) / 10 : 0;
         if (dayHighAsNumber + 5000 > priceConfig.usdInTomanMinimum) {
           // setUsdtPrice(dayHighAsNumber);
           dispatch(setUsdtPrice(dayHighAsNumber + 5000));
+          dispatch(
+            setMinPriceInUsdt(
+              Math.round(
+                ((dayHighAsNumber + 5000) *
+                  priceConfig.minimumDomainPriceInUsd) /
+                  dayLowAsNumber,
+              ),
+            ),
+          );
+        } else {
+          dispatch(
+            setMinPriceInUsdt(
+              Math.round(
+                (priceConfig.usdInTomanMinimum *
+                  priceConfig.minimumDomainPriceInUsd) /
+                  dayLowAsNumber,
+              ),
+            ),
+          );
         }
         // console.log('USDT Price is : ', dayHighAsNumber + 5000);
       } catch (error) {
@@ -129,8 +153,7 @@ const FullDomainInfoPage = (): JSX.Element => {
                 </div>
                 <div className="col-3">
                   <h5>
-                    {formatNumberWithCommas(domainDetails.domainPriceInUSD)}{' '}
-                    (تتر / دلار)
+                    {formatNumberWithCommas(minPriceInUsd.price)} (تتر / دلار)
                   </h5>
                 </div>
                 <div className="col-3">
@@ -166,12 +189,10 @@ const FullDomainInfoPage = (): JSX.Element => {
                   <div className="col-9">
                     <h5>
                       لطفا دقت فرمایید حداقل قیمت دامنه های این شرکت از{' '}
+                      {formatNumberWithCommas(minPriceInUsd.price)} دلار آمریکا
+                      (USD) معادل{' '}
                       {formatNumberWithCommas(
-                        priceConfig.minimumDomainPriceInUsd,
-                      )}{' '}
-                      دلار آمریکا (USD) معادل{' '}
-                      {formatNumberWithCommas(
-                        priceConfig.minimumDomainPriceInUsd * usdtPrice.price,
+                        minPriceInUsd.price * usdtPrice.price,
                       )}{' '}
                       تومان به بالا می باشد لطفا تحت هیچ شرایطی برای قیمتهای
                       کمتر از تماس گرفتن جدا خود داری فرمایید

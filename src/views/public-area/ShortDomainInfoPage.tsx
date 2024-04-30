@@ -7,6 +7,7 @@ import { formatNumberWithCommas } from '../../utils/numberUtil/PersianNumberUtil
 import NobitexService from '../../modules/cryptoCurrency/services/NobitexService';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setUsdtPrice } from '../../redux/usdtPriceSlice';
+import { setMinPriceInUsdt } from '../../redux/minPriceInUsdtSlice';
 import { setDomainDetails } from '../../redux/domainDetailsSlice';
 import OldMrdomainPublicService from '../../modules/domainDetail/services/OldMrdomainPublicService';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,19 +23,42 @@ const ShortDomainInfoPage = (): JSX.Element => {
   const usdtPrice = useAppSelector((state) => state.usdtPrice);
   const domainDetails = useAppSelector((state) => state.domainDetails);
   const dispatch = useAppDispatch();
+  const minPriceInUsd = useAppSelector((state) => state.minPriceInUsdt);
   useEffect(() => {
     const fetchUsdtPriceData = async () => {
       try {
         const response = await NobitexService.findUsdtTiRialPrice();
         const data = response;
         const dayHigh = data?.stats['usdt-rls']?.dayHigh;
+        const dayLow = data?.stats['usdt-rls']?.dayLow;
         const dayHighAsNumber =
           dayHigh !== null && dayHigh !== undefined
             ? parseFloat(dayHigh) / 10
             : 0;
+        const dayLowAsNumber =
+          dayLow !== null && dayLow !== undefined ? parseFloat(dayLow) / 10 : 0;
         if (dayHighAsNumber + 5000 > priceConfig.usdInTomanMinimum) {
           // setUsdtPrice(dayHighAsNumber);
           dispatch(setUsdtPrice(dayHighAsNumber + 5000));
+          dispatch(
+            setMinPriceInUsdt(
+              Math.round(
+                ((dayHighAsNumber + 5000) *
+                  priceConfig.minimumDomainPriceInUsd) /
+                  dayLowAsNumber,
+              ),
+            ),
+          );
+        } else {
+          dispatch(
+            setMinPriceInUsdt(
+              Math.round(
+                (priceConfig.usdInTomanMinimum *
+                  priceConfig.minimumDomainPriceInUsd) /
+                  dayLowAsNumber,
+              ),
+            ),
+          );
         }
         // console.log('USDT Price is : ', dayHighAsNumber);
       } catch (error) {
@@ -78,9 +102,9 @@ const ShortDomainInfoPage = (): JSX.Element => {
                 <h2>این دامنه برای فروش می باشد</h2>
                 <p className="lead">
                   لطفا دقت فرمایید حداقل قیمت دامنه های این شرکت از{' '}
-                  {minDomainPriceInUsdInPersian} دلار آمریکا (USD) به بالا می
-                  باشد لطفا تحت هیچ شرایطی برای قیمتهای کمتر از تماس گرفتن جدا
-                  خود داری فرمایید.
+                  {formatNumberWithCommas(minPriceInUsd.price)} دلار آمریکا
+                  (USD) به بالا می باشد لطفا تحت هیچ شرایطی برای قیمتهای کمتر از
+                  تماس گرفتن جدا خود داری فرمایید.
                 </p>
                 <ul className="list-unstyled tech-feature-list">
                   <li className="py-1">
