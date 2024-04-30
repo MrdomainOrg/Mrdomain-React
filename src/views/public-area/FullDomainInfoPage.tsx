@@ -153,7 +153,13 @@ const FullDomainInfoPage = (): JSX.Element => {
                 </div>
                 <div className="col-3">
                   <h5>
-                    {formatNumberWithCommas(minPriceInUsd.price)} (تتر / دلار)
+                    {domainDetails.domainPriceInUSD < minPriceInUsd.price &&
+                      formatNumberWithCommas(minPriceInUsd.price)}
+                    {domainDetails.domainPriceInUSD > minPriceInUsd.price &&
+                      formatNumberWithCommas(
+                        domainDetails.domainPriceInUSD,
+                      )}{' '}
+                    (تتر / دلار)
                   </h5>
                 </div>
                 <div className="col-3">
@@ -168,9 +174,14 @@ const FullDomainInfoPage = (): JSX.Element => {
                 </div>
                 <div className="col-3">
                   <h5>
-                    {formatNumberWithCommas(
-                      domainDetails.domainPriceInUSD * usdtPrice.price,
-                    )}{' '}
+                    {domainDetails.domainPriceInUSD < minPriceInUsd.price &&
+                      formatNumberWithCommas(
+                        minPriceInUsd.price * usdtPrice.price,
+                      )}
+                    {domainDetails.domainPriceInUSD > minPriceInUsd.price &&
+                      formatNumberWithCommas(
+                        domainDetails.domainPriceInUSD * usdtPrice.price,
+                      )}{' '}
                     تومان
                   </h5>
                 </div>
