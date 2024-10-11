@@ -346,7 +346,9 @@ const FullDomainInfoPage = (): JSX.Element => {
               </h5>
               <h5>
                 <span className="ti-control-backward mr-2 color-primary" />
-                پروسه تحویل کد انتقال بعد از واریز مبلق در لحظه تحویل مشتری می شود و پروسه انتقال دامنه و تغییر مالکیت در لحضه و برخط انجام می شود.
+                پروسه تحویل کد انتقال بعد از واریز مبلق در لحظه و برخط تحویل
+                مشتری می گردد و پروسه انتقال دامنه و تغییر مالکیت در لحضه و برخط
+                انجام می شود.
               </h5>
               <h5>
                 <span className="ti-control-backward mr-2 color-primary" />
